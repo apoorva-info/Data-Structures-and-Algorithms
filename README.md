@@ -14,7 +14,7 @@ My primary goal is to:
 ## 📂 Repository Structure
 
 The repository is organized by categories of data structures and algorithms. Each directory contains Python solutions to various problems under that category, with detailed explanations in the code comments.
-
+```bash
 ├── Array
 │   ├── problem1.py
 │   ├── problem2.py
@@ -44,7 +44,7 @@ The repository is organized by categories of data structures and algorithms. Eac
 │   ├── problem1.py
 │   └── ...
 └── README.md
-
+```
 
 ## 🚀 How to Use
 
