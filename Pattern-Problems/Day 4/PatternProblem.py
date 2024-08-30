@@ -38,8 +38,18 @@ def pattern20(a):
             print()
 
 def pattern21(a):
-      for i in range(1,a+1):
+    for i in range(1,a+1):
         print("*",end="")
+    print()
+    for i in range(1,a-2+1):
+        print("*",end="")
+        print(" " * (a-2),end="")
+        print("*",end="")
+        print()
+    for i in range(1,a+1):
+        print("*",end="")
+    print()
+
             
 
                   
