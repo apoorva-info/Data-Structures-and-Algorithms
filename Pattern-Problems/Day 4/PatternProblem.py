@@ -37,6 +37,11 @@ def pattern20(a):
                   print("*",end="")
             print()
 
+def pattern21(a):
+      for i in range(1,a+1):
+        print("*",end="")
+            
+
                   
                   
                   
@@ -46,4 +51,4 @@ def pattern20(a):
 
 
     
-pattern20(num)
+pattern21(num)
