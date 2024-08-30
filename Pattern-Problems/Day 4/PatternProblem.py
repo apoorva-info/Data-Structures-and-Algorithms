@@ -50,15 +50,23 @@ def pattern21(a):
         print("*",end="")
     print()
 
-            
+def pattern22(a):
+    n=int(a/2)
+    for i in range(1,2*a-2):
+        for j in range(1,2*a-2):
+             top = i
+             left = j
+             right = (2*a-2)-j
+             bottom = (2*a-2)-i
+             print(a - min(min(top,bottom),min(left,right)),end="")
+        print()
+    
 
-                  
-                  
-                  
-            
-        
-        
 
+
+
+        
+    
 
     
-pattern21(num)
+pattern22(num)
