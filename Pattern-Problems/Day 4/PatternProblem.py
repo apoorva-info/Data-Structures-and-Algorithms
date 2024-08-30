@@ -20,9 +20,30 @@ def pattern19(a):
                         
             
         print()
+
+def pattern20(a):
+        for i in range(1,a+1):
+            for j in range(1,i+1):
+                  print("*",end="")
+            print(" " * (2*(a-i)),end="")
+            for j in range(1,i+1):
+                  print("*",end="")
+            print()
+        for i in range(a-1,0,-1):
+            for j in range(1,i+1):
+                  print("*",end="")
+            print(" " * (2*(a-i)),end="")
+            for j in range(1,i+1):
+                  print("*",end="")
+            print()
+
+                  
+                  
+                  
+            
         
         
 
 
     
-pattern19(num)
+pattern20(num)
