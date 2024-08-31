@@ -27,8 +27,17 @@ def prime_number(a):
                 print(f"The number {a} is a prime number.")
                 break
 
-            
 
+# Function to print the prime numbers
+def display_prime_numbers(a):
+    for i in range(1,a+1):
+            if (a>2):
+                for j in range(2,i):
+                    if i%j == 0:
+                        break
+                else:
+                    print(i)
+                    
 
 
 
@@ -39,4 +48,5 @@ num=int(input("Enter a number: "))
 natural_numbers_using_while_loop(num)
 natural_numbers_using_for_loop(num)
 prime_number(num)
+display_prime_numbers(num)
         
