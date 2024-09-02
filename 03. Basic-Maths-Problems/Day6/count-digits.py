@@ -12,7 +12,6 @@ num = int(input("Enter a number: "))
 def countDigits(a):
     count = 0  # Initialize a counter to zero
     while(a > 0):  
-        n = a % 10  # Get the last digit of the number (not used further in the logic)
         count = count + 1  # Increment the count by 1 for each digit
         a = a // 10  # Remove the last digit from the number
     print("The number of digits in the given number is", count)  
@@ -21,3 +20,6 @@ def countDigits(a):
 
 # Call the function with the user-provided number
 countDigits(num)
+
+
+#Time Complexity = O(log₁₀(N))
