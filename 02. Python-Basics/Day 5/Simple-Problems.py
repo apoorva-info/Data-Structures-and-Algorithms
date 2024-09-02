@@ -53,7 +53,7 @@ def prime_number(a):
 
 def display_prime_numbers(a):
     # Iterate from 1 to a (inclusive) to find prime numbers
-    for i in range(1, a + 1):
+    for i in range(2, a + 1):
         if a > 2:  
             # Check if i is divisible by any number from 2 to i-1
             for j in range(2, i):
