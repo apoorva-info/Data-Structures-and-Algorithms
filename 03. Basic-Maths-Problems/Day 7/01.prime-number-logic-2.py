@@ -50,6 +50,7 @@ def prime_number_using_counter(a):
         print(f"{a} is a prime number.")  # Print that 'a' is prime
     else:
         print(f"{a} is not a prime number.")  # Print that 'a' is not prime
+        
 
 # Prompt the user to enter a number and store it as an integer in 'num'
 num = int(input("Enter a number: "))
