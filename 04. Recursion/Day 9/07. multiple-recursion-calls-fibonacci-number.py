@@ -7,10 +7,8 @@
 
 
 def fibonacci_number(a):
-    if a <= 0: # Base Case
-        return 0
-    elif a == 1: # Base Case
-        return 1
+    if a <= 1: # Base Case
+        return a
     else:
         # Recursive call to calculate the Fibonacci number using the sum of the two preceding numbers
         return fibonacci_number(a - 1) + fibonacci_number(a - 2)
