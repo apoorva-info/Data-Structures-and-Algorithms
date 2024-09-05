@@ -17,3 +17,5 @@ result = sum_of_n_numbers_using_functional_approach(num)
 
 # Print the result of the sum
 print(f"The sum of numbers is {result}.")
+
+# Time Complexity = O(n)
