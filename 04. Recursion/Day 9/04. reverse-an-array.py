@@ -1,4 +1,4 @@
-# Function to reverse an array using Recursion
+# Function to reverse an array using Recursion(Using Two Pointers)
 # Example:
 # Input:
 # Enter the size of the array: 5
@@ -15,14 +15,17 @@ def reverse_array(array, left, right):
     if left >= right: # Base case: if the left index is greater than or equal to the right index, stop the recursion
         return 
     else:
-        swap(array, left, right) # Swap the elements at the left and right indices
+        # Initially, I created a swapping function separately. However, python provides a direct option for swapping.
+        # a,b = b,a
+        array[left] , array[right] = array[right] , array[left]
+        # swap(array, left, right) # Swap the elements at the left and right indices
         reverse_array(array, left + 1, right - 1) # Recursive call to reverse the next pair of elements
 
-# Function to swap the elements at the specified indices
-def swap(array, left, right):
-    temp = array[left]
-    array[left] = array[right]
-    array[right] = temp
+# # Function to swap the elements at the specified indices
+# def swap(array, left, right):
+#     temp = array[left]
+#     array[left] = array[right]
+#     array[right] = temp
 
 # Prompt the user to enter the size of the array
 array = []
@@ -41,3 +44,5 @@ reverse_array(array, 0, len(array) - 1)
 print("Reverse array: ", array)
 
 #  Time Complexity = O(n)
+
+
