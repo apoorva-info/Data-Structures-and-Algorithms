@@ -21,3 +21,5 @@ result = fibonacci_number(num)
 
 # Print the result
 print(f"The Fibonacci number at position {num} is {result}.")
+
+# Time Complexity = O(2^n)
