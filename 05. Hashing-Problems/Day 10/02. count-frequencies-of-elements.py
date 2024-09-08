@@ -46,3 +46,8 @@ for j in range(num):
         print(f"{element} is out of range")  # Print if the element is not within the hash range
 
 # Time Complexity = O(n)
+# Maximum Hashing Array Size:
+# int ---> 10^6 ---> inside main
+# int ---> 10^7 ---> globally
+# bool ---> 10^7 ---> inside main
+# bool ---> 10^8 ---> globally
