@@ -16,9 +16,14 @@
 
 def bubble_sort(array):
     for i in range(len(array)):
+        swap = 0
         for j in range(0, len(array) - i - 1): # Inner loop to compare adjacent elements
             if array[j] > array[j + 1]:
                 array[j + 1], array[j] = array[j], array[j + 1] # Swap
+                swap = 1
+        if swap == 0:
+            break
+        # print("Swap") # ---> Number of times swapping was done
 
 # Prompt the user to enter the size of the array
 size = int(input("Enter the size of the array: "))
@@ -32,3 +37,6 @@ bubble_sort(array_list)
 
 # Print the sorted array
 print(f"Sorted Array: {array_list}")
+
+# Time Complexity = O(n^2) ---> Worst Case & Average Case 
+                    # O(n) ---> Best Case
