@@ -36,4 +36,4 @@ selection_sort(array)
 # Print the sorted array
 print(f"Sorted Array: {array}")
 
-# Time Complexity = O(n^2)
+# Time Complexity = O(n^2) ---> (Best Case , Average Case , Worst Case)
