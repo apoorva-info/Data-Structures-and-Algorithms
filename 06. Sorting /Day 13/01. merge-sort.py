@@ -66,3 +66,6 @@ merge_sort(array, 0, size - 1)
 
 # Print the sorted array
 print(f"Sorted Array: {array}")
+
+# Time Complexity = O(n*log(n))
+# Space Complexity = O(n)
