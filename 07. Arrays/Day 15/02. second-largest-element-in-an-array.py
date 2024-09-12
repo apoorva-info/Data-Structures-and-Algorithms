@@ -29,10 +29,28 @@ def second_largest_better(array):
         print("No second largest element is found.")
     else:
         print(f"The second largest element in the array using better approach is {second_largest}.")
-# Time Complexity = O(n)
+# Time Complexity = O(2n)
 # Space Complexity = O(1)
-        
+
+# Optimal Approach
+def second_largest_optimal(array):
+    if len(array)<2:
+        print("The second largest number is not found.")
+    if array[0] > array[1]:
+        largest = array[0]
+        second_largest = array[1]
+    else:
+        largest = array[1]
+        second_largest = array[0]
+    for i in range(2,len(array)):
+        if array[i] > largest:
+            second_largest = largest
+            largest = array[i]
+        elif array[i] > second_largest and array[i] != largest:
+            second_largest = array[i]
             
+    print(f"The largest element is {largest} and the second largest element is {second_largest}.")
+        
         
 
 
@@ -45,4 +63,5 @@ for i in range(size):
     element = int(input(f"Enter the element at array[{i}]: "))
     user_array.append(element)
 # second_largest_brute(user_array)
-second_largest_better(user_array)
+# second_largest_better(user_array)
+second_largest_optimal(user_array)
