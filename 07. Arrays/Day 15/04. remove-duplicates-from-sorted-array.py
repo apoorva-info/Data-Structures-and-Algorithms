@@ -6,6 +6,7 @@ def remove_duplicates_using_sets(sorted_array):
     sorted_array = array('i',user_set)
     
     return user_set,len(sorted_array)
+# Doesn't maintains the order
 # Time Complexity = O(n)
 # Space Complexity = O(n)
 
@@ -21,6 +22,7 @@ def remove_duplicates(sorted_array):
             temp.append(sorted_list[i])
     sorted_list = temp     
     print(sorted_list)
+# Maintains the order
 # Time Complexity = O(n)
 # Space Complexity = O(n)
 
