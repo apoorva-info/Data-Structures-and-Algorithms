@@ -20,6 +20,8 @@ def linear_search(array):
             return i  
     else:
         return -1  
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 # User Input
 user_array = array('i', [])  
