@@ -1,21 +1,24 @@
 # Function to find the intersection of two sorted arrays
 # Example:
 # Input:
-# Enter the size of the first list: 7
-# Enter the element at first_list[0]: 3
-# Enter the element at first_list[1]: 2
-# Enter the element at first_list[2]: 1
-# Enter the element at first_list[3]: 1
-# Enter the element at first_list[4]: 4
-# Enter the element at first_list[5]: 5
-# Enter the element at first_list[6]: 3
-# Enter the size of the second list: 4
+# Enter the size of the first list: 5
+# Enter the element at first_list[0]: 4
+# Enter the element at first_list[1]: 4
+# Enter the element at first_list[2]: 3
+# Enter the element at first_list[3]: 2
+# Enter the element at first_list[4]: 7
+# Enter the size of the second list: 6
 # Enter the element at second_list[0]: 4
-# Enter the element at second_list[1]: 1
-# Enter the element at second_list[2]: 1
-# Enter the element at second_list[3]: 2
+# Enter the element at second_list[1]: 4
+# Enter the element at second_list[2]: 2
+# Enter the element at second_list[3]: 8
+# Enter the element at second_list[4]: 5
+# Enter the element at second_list[5]: 3
 # Output: 
-# [1, 1, 2, 4]
+# [2, 3, 4, 4, 7]
+# [2, 3, 4, 4, 5, 8]
+# Brute Solution = [2, 3, 4, 4]
+# Optimal Solution = [2, 3, 4, 4]
 
 # Brute Force Approach
 def intersection(list1,list2):
