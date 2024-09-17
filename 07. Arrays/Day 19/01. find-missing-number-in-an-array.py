@@ -1,6 +1,6 @@
 from array import array
 
-# Brute Force Approach
+# Brute Force Approach 1
 def missing_number_brute(arr,n):
     for i in range(1,n):
         flag = 0
@@ -14,7 +14,7 @@ def missing_number_brute(arr,n):
 # Space Complexity = O(1)
 
 
-# Brute Force Approach
+# Brute Force Approach 2
 def missing_number(arr,n):
     for i in range(1,n+1):
         if i not in arr: # ---> Runs for n times for each element 
@@ -36,7 +36,17 @@ def missing_number_using_hashing(arr,n):
 # Time Complexity = O(n)
 # Space Complexity = O(n)
   
-    
+# Optimal Approach 1
+def missing_number_using_sum(arr,n):
+    sum_of_n_numbers = n*(n+1)/2
+    sum_of_numbers_in_array = 0
+    for i in range(n-1):
+        sum_of_numbers_in_array = sum_of_numbers_in_array + arr[i]
+    return sum_of_n_numbers - sum_of_numbers_in_array
+# Time Complexity = O(n)
+# Space Complexity = O(1)
+
+
 
 
 
@@ -47,5 +57,7 @@ len_of_user_array = 7
 # print(f"Missing number: {result1}")
 # result2 = missing_number(user_array,len_of_user_array)
 # print(f"Missing number: {result2}")
-result3 = missing_number_using_hashing(user_array,len_of_user_array)
-print(f"Missing number: {result3}")
+# result3 = missing_number_using_hashing(user_array,len_of_user_array)
+# print(f"Missing number: {result3}")
+result4 = missing_number_using_sum(user_array,len_of_user_array)
+print(f"Missing number: {result4}")
