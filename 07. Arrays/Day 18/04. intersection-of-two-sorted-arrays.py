@@ -29,23 +29,50 @@ def intersection(list1,list2):
                     break
             if list2[j] > list1[i]:
                  break
-    print(intersection_list)
+    return intersection_list
 # Time Complexity = O(n1 * n2)
 # Space Complexity = O(n2)
 
+# Optimal Approach
+def intersection_optimal(list1,list2):
+    answer = []
+    j = 0
+    i = 0 
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+              i += 1
+        elif list2[j] < list1[i]:
+             j += 1
+        else:
+             answer.append(list1[i])
+             i += 1
+             j += 1
+    return answer
+# Time Complexity = O(n1 + n2)
+# Space Complexity = O(1)
+              
+          
 
-
-# User Input
+# User Input 
 first_list = []
 first_size = int(input("Enter the size of the first list: "))
 for i in range(first_size):
     element = int(input(f"Enter the element at first_list[{i}]: "))
     first_list.append(element)
 first_list = sorted(first_list)
+
 second_list = []
 second_size = int(input("Enter the size of the second list: "))
 for i in range(second_size):
     element = int(input(f"Enter the element at second_list[{i}]: "))
     second_list.append(element)
 second_list = sorted(second_list)
-intersection(first_list,second_list)
+
+print(first_list)
+print(second_list)
+
+# Function Call
+brute_solution = intersection(first_list,second_list)
+print(f"Brute Solution = {brute_solution}")
+optimal_solution = intersection_optimal(first_list,second_list)
+print(f"Optimal Solution = {optimal_solution}")
