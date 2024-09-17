@@ -22,8 +22,8 @@ def maximum_consecutive_ones(arr):
             count = 0
     
     return maximum
-            
-        
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 # User Input 
 user_array = array('i',[])
