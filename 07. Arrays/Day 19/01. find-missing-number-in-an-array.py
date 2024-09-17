@@ -60,6 +60,13 @@ def missing_number_using_xor(arr,n):
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
+"""
+Why is XOR better than Sum approach?
+1. Sum involves arithmetic calculations while XOR does not involve arithmetic calculations.
+2. XOR operations are not affected by large numbers, there's no risk of overflow because it only involves 
+bitwise operations. However, calculating the sum can lead to overflow especially in languages or environments 
+with fixed sized integers.
+"""
 
 # User Input
 user_array = array('i',[2,5,4,3,1,7])
