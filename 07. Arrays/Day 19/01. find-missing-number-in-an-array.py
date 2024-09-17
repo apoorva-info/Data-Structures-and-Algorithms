@@ -14,9 +14,7 @@ def missing_number_brute(arr,n):
 # Space Complexity = O(1)
 
 
-
-
-# Better Solution
+# Brute Force Approach
 def missing_number(arr,n):
     for i in range(1,n+1):
         if i not in arr: # ---> Runs for n times for each element 
@@ -25,10 +23,29 @@ def missing_number(arr,n):
 # Space Complexity = O(1)
 
 
+# Better Approach
+def missing_number_using_hashing(arr,n):
+    # Pre Computation
+    hash_list = [0] * (n+1)
+    for i in range(n-1):
+        hash_list[arr[i]] += 1
+    # Fetch
+    for i in range(1,n):
+        if hash_list[i] == 0:
+            return i
+# Time Complexity = O(n)
+# Space Complexity = O(n)
+  
+    
+
+
+
 # User Input
 user_array = array('i',[2,5,4,3,1,7])
 len_of_user_array = 7
-result1 = missing_number_brute(user_array,len_of_user_array)
-print(f"Missing number: {result1}")
+# result1 = missing_number_brute(user_array,len_of_user_array)
+# print(f"Missing number: {result1}")
 # result2 = missing_number(user_array,len_of_user_array)
 # print(f"Missing number: {result2}")
+result3 = missing_number_using_hashing(user_array,len_of_user_array)
+print(f"Missing number: {result3}")
