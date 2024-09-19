@@ -25,7 +25,22 @@ def two_sum_better(arr,target):
 # Optimal Approach
 def two_sum_optimal(arr,target):
     arr = sorted(arr)
-    return arr
+    left = 0
+    right = len(arr) - 1
+    while left < right:
+        if arr[left] + arr[right] == target:
+            return left,right
+        elif arr[left] + arr[right] < target:
+            left += 1
+        elif arr[left] + arr[right] > target:
+            right -= 1
+    return None
+# Time Complexity = O(n log n)
+# Space Complexity = O(n)
+# Why Space Complexity = O(n)? 
+# Because the sorting function makes a new copy of sorted array during the sorting process even if I assign 
+# the value of sorted(arr) to arr, a new copy has already been created. If the sorting is done in-place then
+# no extra space will be involved and hence, the space complexity will be O(1).
 
 
 
