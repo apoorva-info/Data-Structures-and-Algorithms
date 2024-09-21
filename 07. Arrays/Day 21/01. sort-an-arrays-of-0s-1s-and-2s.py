@@ -17,13 +17,17 @@ def sort_better(arr):
             count1 += 1
         else:
             count2 += 1
+    print(count0)
+    print(count1)
+    print(count2)
     
     for i in range(count0):
         arr[i] = 0
-    for i in range(count0,count1):
+    for i in range(count0,count1+count0):
         arr[i] = 1
-    for i in range(count1,count2):
+    for i in range(count1+count0,count2+count0+count1):
         arr[i] = 2
+    return arr
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
