@@ -12,8 +12,19 @@ def majority_element_brute(arr,n):
 # Space Complexity = O(1)
 
                 
+# Better Approach
+def majority_element_better(arr,n):
+    max_element = max(arr)
+    hash_arr = [0] * (max_element+1)
+    for i in range(n):
+        hash_arr[arr[i]] += 1
+    for i in range(max_element+1):
+        if hash_arr[i] > n/2:
+            return i
 
-    
+        
+
+
 
 
 
