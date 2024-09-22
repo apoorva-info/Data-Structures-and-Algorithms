@@ -21,6 +21,30 @@ def majority_element_better(arr,n):
     for i in range(max_element+1):
         if hash_arr[i] > n/2:
             return i
+    return None
+# Time Complexity = O(n)
+# Space Complexity = O(n)
+
+# Optimal Approach
+# Moore"s Voting Algorithm
+def majority_element_optimal(arr,n):
+    count = 0
+    for i in range(n):
+        if count == 0:
+            element = arr[i]
+        elif arr[i] == element:
+            count += 1
+        else:
+            count -= 1
+    count1 = 0
+    for i in range(n):
+        if arr[i] == element:
+            count1 += 1
+    if count1 > n//2:
+        return element
+# Time Complexity = O(n)
+# Space Complexity = O(1)
+    
 
         
 
@@ -38,5 +62,9 @@ for i in range(size):
     user_array.append(element)
 print(user_array)
 
-result = majority_element_brute(user_array,size)
+# result = majority_element_brute(user_array,size)
+# print(result)
+# result = majority_element_better(user_array,size)
+# print(result)
+result = majority_element_optimal(user_array,size)
 print(result)
