@@ -40,10 +40,9 @@ def max_sub_array_sum_optimal(arr,n):
             end = i
         if sum < 0:
             sum = 0
-    if max_sum == 0:
-        return None 
-    else:
-        return max_sum, start , end
+    return max_sum, start , end
+# Time Complexity = O(n)
+# Space Complexity = O(1)
         
 
             
