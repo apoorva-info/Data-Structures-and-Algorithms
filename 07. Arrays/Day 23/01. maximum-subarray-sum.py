@@ -1,3 +1,5 @@
+
+# Brute Force Approach
 def max_sub_array_sum_brute(arr,n):
     max_sum = float('-inf')
     for i in range(n):
@@ -11,7 +13,7 @@ def max_sub_array_sum_brute(arr,n):
 # Space Complexity = O(1)
 
 
-
+# Better Approach
 def max_sub_array_sum_better(arr,n):
     max_sum = float('-inf')
     for i in range(n):
@@ -22,6 +24,28 @@ def max_sub_array_sum_better(arr,n):
     return max_sum
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
+
+# Optimal Approach
+# Kadane's Algorithm
+def max_sub_array_sum_optimal(arr,n):
+    sum = 0 
+    max_sum = float('-inf')
+    for i in range(n):
+        if sum == 0:
+            start = i
+        sum = sum + arr[i]
+        if max_sum < sum:
+            max_sum = sum
+            start = start 
+            end = i
+        if sum < 0:
+            sum = 0
+    if max_sum == 0:
+        return None 
+    else:
+        return max_sum, start , end
+        
+
             
 
 
@@ -44,5 +68,8 @@ print(array)
 # result = max_sub_array_sum_brute(array,size)
 # print(result)
 
-result = max_sub_array_sum_better(array,size)
+# result = max_sub_array_sum_better(array,size)
+# print(result)
+
+result = max_sub_array_sum_optimal(array,size)
 print(result)
