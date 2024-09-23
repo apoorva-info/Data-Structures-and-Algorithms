@@ -49,6 +49,7 @@ def majority_element_optimal(arr, n):
     for i in range(n):
         if count == 0:
             element = arr[i]
+            count = 1
         elif arr[i] == element:
             count += 1
         else:
