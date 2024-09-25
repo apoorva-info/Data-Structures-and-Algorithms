@@ -1,3 +1,6 @@
+
+
+
 def permutations(arr):
     if len(arr) == 0:
         return []
@@ -24,7 +27,22 @@ def next_permutation_brute(arr):
                 return permutation_list[i+1]
             else:
                 return permutation_list[0]
-        
+# Time Complexity = O(n! * n log (n!))
+# Space Complexity = O(n! * n)
+
+import itertools
+# Better Approach
+def next_permutation_better(arr):
+    permutation_list = list(itertools.permutations(arr)) # Returns a tuple so conversion to list is important.
+    permutation_list = sorted(permutation_list)
+    for i,value in enumerate(permutation_list):
+        if value == tuple(arr):
+            if i + 1 < len(permutation_list):
+                return list(permutation_list[i+1])
+            else:
+                return list(permutation_list[0])
+# Time Complexity = O(n! * n log (n!))
+# Space Complexity = O(n! * n)
 
 
 
@@ -41,5 +59,8 @@ for i in range(size):
     array.append(element)
 print(array)
 
-result = next_permutation_brute(array)
+# result = next_permutation_brute(array)
+# print(result)
+
+result = next_permutation_better(array)
 print(result)
