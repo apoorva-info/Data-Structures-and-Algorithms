@@ -59,4 +59,5 @@ print(array)
 result = rearrange_elements_brute(array, size)
 print(result)
 
-
+# Time Complexity = O(k)
+# Space Complexity = O(k)
