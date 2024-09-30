@@ -8,6 +8,24 @@ def leaders_in_an_array_brute(arr,n):
         else:
             temp.append(arr[i])
     return temp
+# Time Complexity = O(n^2)
+# Space Complexity = O(n)
+
+# Optimal Approach
+def leaders_in_an_array_optimal(arr,n):
+    temp = []
+    max_element = float('-inf')
+    for i in range(n-1,-1,-1):
+        if arr[i] > max_element:
+            max_element = arr[i]
+            temp.append(arr[i])
+    return temp
+
+        
+        
+        
+            
+     
 
 
 
@@ -25,5 +43,7 @@ for i in range(size):
     array.append(element)
 print(array)
 
-result = leaders_in_an_array_brute(array,size)
+# result = leaders_in_an_array_brute(array,size)
+# print(result)
+result = leaders_in_an_array_optimal(array,size)
 print(result)
