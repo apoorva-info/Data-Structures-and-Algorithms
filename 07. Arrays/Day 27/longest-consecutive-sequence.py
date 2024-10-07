@@ -35,7 +35,33 @@ def longest_consecutive_better(arr,n):
             last_smallest = arr[i]
         longest = max(longest,count)
     return longest
-        
+
+# Time Complexity = O(n log n)
+# Space Complexity = O(1)
+
+# Optimal Approach
+ 
+def longest_consecutive_optimal(arr,n):
+    if n == 0:
+        return 0 
+    
+    longest = 1
+    arr = set(arr)
+
+    for num in arr:
+        if num - 1 not in arr:
+            current_num = num
+            count = 1
+            while current_num + 1 in arr:
+                count += 1
+                current_num += 1
+            longest = max(longest,count)
+    return longest
+
+
+    
+
+
 
 
 
@@ -52,5 +78,8 @@ print(array)
 # result = longest_consecutive_brute(array,size)
 # print(result)
 
-result = longest_consecutive_better(array,size)
+# result = longest_consecutive_better(array,size)
+# print(result)
+
+result = longest_consecutive_optimal(array,size)
 print(result)
