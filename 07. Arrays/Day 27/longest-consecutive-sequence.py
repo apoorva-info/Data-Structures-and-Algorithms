@@ -1,3 +1,5 @@
+
+# Brute Force Approach
 def ls(arr,a):
     for i in arr:
         if a == i:
@@ -18,7 +20,22 @@ def longest_consecutive_brute(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
-
+# Better Approach
+def longest_consecutive_better(arr,n):
+    arr = sorted(arr)
+    longest = 1
+    count = 0 
+    last_smallest = float('-inf')
+    for i in range(n):
+        if arr[i] - 1 == last_smallest:
+            count = count + 1
+            last_smallest = arr[i]
+        elif arr[i] != last_smallest:
+            count = 1
+            last_smallest = arr[i]
+        longest = max(longest,count)
+    return longest
+        
 
 
 
@@ -32,5 +49,8 @@ for i in range(size):
     array.append(element)
 print(array)
 
-result = longest_consecutive_brute(array,size)
+# result = longest_consecutive_brute(array,size)
+# print(result)
+
+result = longest_consecutive_better(array,size)
 print(result)
