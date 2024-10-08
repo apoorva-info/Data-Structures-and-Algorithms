@@ -40,6 +40,37 @@ def set_matrix_zeroes_better(matrix,m,n):
                 matrix[i][j] = 0
     
     return matrix
+# Time Complexity = O(n*m) 
+# Space Complexity = O(n+m)
+
+# Optimal Solution
+def set_matrix_zeroes_better(matrix,m,n):
+    col0 = 1
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                matrix[i][0] = 0
+                if j != 0:
+                    matrix[0][j] = 0
+                else:
+                    col0 = 0
+
+    for i in range(1,m):
+        for j in range(1,n):
+            if matrix[i][j] != 0:
+                if matrix[0][j]==0 or matrix[i][0]==0:
+                    matrix[i][j] = 0
+    if matrix[0][0] == 0:
+        for j in range(m):
+            matrix[0][j] = 0
+    if col0 == 0:
+        for i in range(n):
+            matrix[i][0] = 0
+    
+    return matrix
+# Time Complexity = O(n*m) 
+# Space Complexity = O(1)
+
 
 
     
