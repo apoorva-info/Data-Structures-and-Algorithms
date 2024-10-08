@@ -22,6 +22,25 @@ def set_matrix_zeroes_brute(matrix,m,n):
                 matrix[i][j] = 0
     return matrix
 
+# Time Complexity = O((n*m)*(n+m)+(n*m)) 
+# Space Complexity = O(1)
+
+# Better Solution
+def set_matrix_zeroes_better(matrix,m,n):
+    rows=[0]*m
+    columns=[0]*n
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                rows[i] = 1
+                columns[j] = 1
+    for i in range(m):
+        for j in range(n):
+            if rows[i] == 1 or columns[j] == 1:
+                matrix[i][j] = 0
+    
+    return matrix
+
 
     
 
@@ -51,5 +70,8 @@ for i in range(rows):
         matrix[i][j] = int(input(f"Enter the element at matrix[{i}][{j}]: "))
 print(matrix)
 
-result = set_matrix_zeroes_brute(matrix,rows,columns)
+# result = set_matrix_zeroes_brute(matrix,rows,columns)
+# print(result)
+
+result = set_matrix_zeroes_better(matrix,rows,columns)
 print(result)
