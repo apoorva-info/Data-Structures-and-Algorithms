@@ -68,5 +68,5 @@ print(f"Original matrix: \n{matrix}")
 # print(f"Rotated matrix (Brute Force): \n{result_brute}")
 
 # Optimal Approach
-result_optimal = rotate_matrix_optimal(matrix_copy, m)
+result_optimal = rotate_matrix_optimal(matrix,m)
 print(f"Rotated matrix (Optimal): \n{result_optimal}")
