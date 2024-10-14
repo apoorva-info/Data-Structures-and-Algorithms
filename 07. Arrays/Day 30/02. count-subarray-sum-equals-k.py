@@ -2,7 +2,6 @@
 def number_of_subarrays_with_sum_k_brute(arr,k,n):
     count = 0
     for i in range(n):
-        sum = 0
         for j in range(i,n):
             sum = 0
             for m in range(i,j+1):
@@ -12,6 +11,19 @@ def number_of_subarrays_with_sum_k_brute(arr,k,n):
     return count
 # Time Complexity = O(n^3)
 # Space Complexity = O(1)
+
+# Better Approach
+def number_of_subarrays_with_sum_k_better(arr,k,n):
+    count = 0
+    for i in range(n):
+        current_sum = 0
+        for j in range(i,n):
+            current_sum = current_sum + arr[j]
+            print(current_sum)
+            print()
+            if current_sum == k:
+                count+=1
+    return count
 
 
 
@@ -39,4 +51,7 @@ for i in range(n):
 # print(user_array)
 
 result = number_of_subarrays_with_sum_k_brute(user_array,k,n)
+print(result)
+
+result = number_of_subarrays_with_sum_k_better(user_array,k,n)
 print(result)
