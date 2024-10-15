@@ -19,9 +19,12 @@ def find_nth_row(r):
 # A better approach
 def pascalTriangle(r):
     previous_result = 1
+    print(previous_result)
     for c in range(1,r):
         previous_result = (previous_result * (r-c))//c
         print(previous_result)
+# Time Complexity = O(r)
+# Space Complexity = O(1)
 
 row = int(input("Enter the number of row: "))
 
