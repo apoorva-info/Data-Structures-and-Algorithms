@@ -18,7 +18,25 @@ def find_element(r,c):
     element = num // (d1 * d2)
     return element
 
+# A better approach 
+def nCr(n,r):
+    res = 1
+    for i in range(r):
+        res = res * (n-i)
+        res = res // (i+1)
+    return res
+# Time Complexity = O(r)
+# Space Complexity = O(1)
+
+def pascalTriangle(r,c):
+    element = nCr(r-1,c-1)
+    return element
+
 row = int(input("Enter the number of row: "))
 column = int(input("Enter the number of column: "))
-result = find_element(row,column)
-print(result)
+
+result1 = find_element(row,column)
+print(result1)
+
+result2 = pascalTriangle(row,column)
+print(result2)
