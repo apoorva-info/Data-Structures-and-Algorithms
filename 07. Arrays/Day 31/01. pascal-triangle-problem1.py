@@ -2,6 +2,8 @@
 # 1. Given rows and columns, tell the element at that place.
 # 2. Print any nth row of the pascal triangle.
 # 3. Given N, print the pascal triangle. 
+
+
 #  Problem 1:
 # Use combinations to solve this problem
 def fact(a):
@@ -40,3 +42,5 @@ print(result1)
 
 result2 = pascalTriangle(row,column)
 print(result2)
+
+

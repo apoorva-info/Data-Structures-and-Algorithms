@@ -34,10 +34,8 @@ def pascalTriangle_better(r):
             temp.append(previous_result)
         ans.append(temp)
     return ans
-
-
-
-
+# Time Complexity ~ O(n^2)
+# Space Complexity = O(n)
 
 row = int(input("Enter the number of rows: "))
 
