@@ -67,5 +67,27 @@ items = student.items()
 #     print(value)
 
 # Iterating over dictionary
-for item in student.items():
-    print(item)
+# for item in student.items():
+#     print(item)
+
+## Nested Dictionaries
+students = {"student1":{"name":"Peter","age":34},
+            "student2":{"name":"John","age":56}}
+# print(students)
+
+## Accessing the nested dictionaries elements
+# print(students["student2"]["age"])
+
+## Iterating over nested dictionaries
+# for id,info in students.items():
+#     print(f"{id}:{info}")
+#     for key,value in info.items():
+#         print(f"{key}:{value}")
+
+## Dictionary Comprehension
+# squares = {i:i**2 for i in range(10)}
+# print(squares)
+
+## Condition Dictionary Comprehension
+squares = {i:i**2 for i in range(10) if i%2==0}
+print(squares)
