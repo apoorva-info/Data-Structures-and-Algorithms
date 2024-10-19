@@ -28,8 +28,38 @@ def three_sum_better(arr,n):
         
     ans = list(ans)     
     return ans
-# Time Complexity = O(n^2)
+# Time Complexity = O(n^2 log m) m--> size of set
 # Space Complexity = O(n)
+
+# Optimal Approach
+def three_sum_optimal(arr,n):
+    arr = sorted(arr)
+    ans = []
+    for i in range(n):
+        if i > 0 and arr[i] == arr[i-1]: 
+            continue
+        j = i + 1
+        k = n - 1
+        while j < k:
+            sum = arr[i] + arr[j] + arr[k]
+            if sum < 0:
+                j+=1
+            elif sum > 0:
+                k -= 1
+            else:
+                temp = {arr[i],arr[j],arr[k]}
+                ans.append(temp)
+                j+=1
+                k-=1
+                while j<k and arr[j] == arr[j-1]:
+                    j += 1
+                while j<k and arr[k] == arr[k+1]:
+                    k -= 1
+    return ans
+# Time Complexity = O(n log n) + O(n^2)
+# Space Complexity = O(number of unique triplets)
+
+
 
 # User Input
 lst = []
@@ -40,5 +70,7 @@ for i in range(n):
 print(lst)
 # result = three_sum_brute(lst,n)
 # print(result)
-result = three_sum_better(lst,n)
+# result = three_sum_better(lst,n)
+# print(result)
+result = three_sum_optimal(lst,n)
 print(result)
