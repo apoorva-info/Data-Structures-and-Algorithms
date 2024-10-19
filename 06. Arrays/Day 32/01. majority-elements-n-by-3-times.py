@@ -1,3 +1,4 @@
+from collections import defaultdict
 def majority_elements_brute(arr,n):
     ans = []
     for i in range(n):
@@ -12,7 +13,21 @@ def majority_elements_brute(arr,n):
                 break
     return ans
 # Time Complexity = O(n^2)
+# Space Complexity = O(1)
+
+def majority_elements_better(arr,n):
+    hash_lst = defaultdict(int)
+    minimum_value = n//3
+    ans = []
+    for i in range(n):
+        hash_lst[arr[i]] += 1
+        if hash_lst[arr[i]] == minimum_value:
+            ans.append(arr[i])
+    return ans
+# Time Complexity = O(n)
 # Space Complexity = O(n)
+
+
 
 
 # User Input
@@ -23,5 +38,7 @@ for i in range(n):
     lst.append(element)
 print(lst)
 
-result = majority_elements_brute(lst,n)
+# result = majority_elements_brute(lst,n)
+# print(result)
+result = majority_elements_better(lst,n)
 print(result)
