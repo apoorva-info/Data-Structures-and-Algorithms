@@ -1,3 +1,11 @@
+# Goal: Implement three different approaches to count the number of subarrays with XOR equal to k.
+# This problem aims to find the count of subarrays in a given array where the XOR of all elements in the subarray equals a given value k.
+
+# Example:
+# Input: arr = [4, 2, 2, 6, 4], k = 6
+# Output: 4
+# Explanation: The subarrays with XOR 6 are [4, 2], [2, 2, 6], [6], [2, 2, 6, 4]
+
 # Brute Force Approach
 def count_subarrays_with_xor_k_brute(arr,n,k):
     count = 0
@@ -38,8 +46,8 @@ def count_subarrays_with_xor_k_optimal(arr,n,k):
         count += hash_map[x]
         hash_map[xr] += 1
     return count
-# Time Complexity = O(n^2)
-# Space Complexity = O(1)
+# Time Complexity = O(n)
+# Space Complexity = O(n)
 
 # User Input
 lst = []
