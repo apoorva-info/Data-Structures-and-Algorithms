@@ -41,6 +41,25 @@ def repeating_and_missing_elements_better(arr,n):
 # Time Complexity = O(n)
 # Space Complexity = O(n)
 
+# Optimal Approach 1:
+def repeating_and_missing_elements_optimal1(arr,n):
+    sn = n * (n+1)/2
+    s2n = n * (n+1) * (2*n+1)/6
+    s = 0
+    s2 = 0
+    for i in arr:
+        s = s + i
+        s2 = s2 + i**2
+    val1 = s - sn
+    val2 = s2 - s2n
+    val2 = val2 / val1
+    x = (val1 + val2) / 2
+    y = x - val1 
+    return int(x),int(y)
+
+       
+
+
 
 lst = []
 n = int(input("Enter the size of the list: "))
@@ -52,5 +71,8 @@ print(lst)
 # result = repeating_and_missing_elements_brute(lst,n)
 # print(result)
 
-result = repeating_and_missing_elements_better(lst,n)
+# result = repeating_and_missing_elements_better(lst,n)
+# print(result)
+
+result = repeating_and_missing_elements_optimal1(lst,n)
 print(result)
