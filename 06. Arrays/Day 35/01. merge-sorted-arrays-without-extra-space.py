@@ -29,6 +29,21 @@ def merge_sorted_arrays_brute(arr1,arr2,m,n):
 # Time Complexity = O(m+n)
 # Space Complexity = O(m+n)
 
+# Optimal Approach 1
+def optimal_approach1(arr1,arr2,m,n):
+    left = m - 1
+    right = 0
+    while left >= 0 and right < n:
+        if arr1[left] > arr2[right]:
+            arr1[left],arr2[right] = arr2[right],arr1[left]
+            left -= 1
+            right += 1
+        else:
+            break
+    arr1 = sorted(arr1)
+    arr2 = sorted(arr2)
+    return arr1,arr2
+    
 
 # User Input
 lst1 = []
@@ -47,5 +62,8 @@ for i in range(n):
 print(lst1)
 print(lst2)
 
-result = merge_sorted_arrays_brute(lst1,lst2,m,n)
+# result = merge_sorted_arrays_brute(lst1,lst2,m,n)
+# print(result)
+
+result = optimal_approach1(lst1,lst2,m,n)
 print(result)
