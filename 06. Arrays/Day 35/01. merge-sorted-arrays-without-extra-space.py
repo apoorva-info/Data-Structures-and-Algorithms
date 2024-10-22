@@ -26,8 +26,8 @@ def merge_sorted_arrays_brute(arr1,arr2,m,n):
         arr2[i-m] = arr3[i]
 
     return arr1,arr2
-
-
+# Time Complexity = O(m+n)
+# Space Complexity = O(m+n)
 
 
 # User Input
