@@ -57,6 +57,9 @@ def repeating_and_missing_elements_optimal1(arr,n):
     y = x - val1 
     return int(x),int(y)
 
+# Time Complexity = O(n)
+# Space Complexity = O(1)
+
        
 
 
