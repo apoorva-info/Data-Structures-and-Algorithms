@@ -38,8 +38,8 @@ def repeating_and_missing_elements_better(arr,n):
         if repeated_number != -1 and missing_number != -1:
             break
     return repeated_number, missing_number
-
-
+# Time Complexity = O(n)
+# Space Complexity = O(n)
 
 
 lst = []
