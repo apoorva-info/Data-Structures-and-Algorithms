@@ -92,6 +92,8 @@ def optimal_approach2(arr1,arr2,m,n):
             break
         gap = (gap // 2) + (gap % 2)
     return arr1,arr2
+# Time Complexity = O((m+n)log(m+n))
+# Space Complexity = O(1)
 
 # User Input
 lst1 = []
