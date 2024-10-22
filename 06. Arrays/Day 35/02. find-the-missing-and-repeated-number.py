@@ -3,6 +3,8 @@
 
 # Brute Force Approach
 def repeating_and_missing_elements_brute(arr,n):
+    repeated_number = -1
+    missing_number = -1
     for i in range(n):
         count = 0
         for j in range(n):
@@ -12,22 +14,13 @@ def repeating_and_missing_elements_brute(arr,n):
             missing_number = i
         elif count == 2:
             repeated_number = i
+        if repeated_number != -1 and missing_number != -1:
+            break
     return repeated_number , missing_number
 
+# Time Complexity = O(n^2)
+# Space Complexity = O(1)
 
-
-
-
-# def repeating_and_missing_elements(arr,n):
-#     ans = []
-#     arr = sorted(arr)
-#     max_element = max(arr)
-#     for i in range(1,n):
-#         if arr[i-1] == arr[i]:
-#             ans.append(arr[i])
-    
-#     for i in range(max_element):
-#         if i 
 lst = []
 n = int(input("Enter the size of the list: "))
 for i in range(n):
