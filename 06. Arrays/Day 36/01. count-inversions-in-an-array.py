@@ -22,8 +22,52 @@ def count_inversions_brute(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
-# Better Approach
+# Optimal Approach
+count = 0
+# Merge Algorithm
+def merge(array, low, mid, high):
+    global count
+    temp_array = []  # Temporary array to store merged elements
+    left = low       # Left Pointer
+    right = mid + 1  # Right Pointer
+    
+    # Merge the two halves into temp_array
+    while left <= mid and right <= high:
+        if array[left] <= array[right]:
+            temp_array.append(array[left])
+            left += 1
+        else:
+            temp_array.append(array[right])
+            count += mid - left + 1
+            right += 1
+    
+    # Append remaining elements of the left half, if any
+    while left <= mid:
+        temp_array.append(array[left])
+        left += 1
+    
+    # Append remaining elements of the right half, if any
+    while right <= high:
+        temp_array.append(array[right])
+        right += 1
+    
+    # Copy the sorted elements back into the original array
+    for i in range(low, high + 1):
+        array[i] = temp_array[i - low]
+def merge_sort(array, low, high):
+    # Recursive function to divide the array and sort the sub-arrays
+    if low == high:
+        return  # Base case: single element
+    else:
+        mid = (low + high) // 2  
+        merge_sort(array, low, mid)     # Sort the left half
+        merge_sort(array, mid + 1, high)  # Sort the right half
+        merge(array, low, mid, high) 
+
 def count_inversions_better(arr,n):
+    merge_sort(arr,0,n-1)
+    return count
+
     
 # User Input
 lst = []
