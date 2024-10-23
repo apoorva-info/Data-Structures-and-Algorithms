@@ -19,6 +19,8 @@ def count_inversions_brute(arr,n):
             if arr[i] > arr[j]:
                 count += 1
     return count
+# Time Complexity = O(n^2)
+# Space Complexity = O(1)
 
 
 # User Input
