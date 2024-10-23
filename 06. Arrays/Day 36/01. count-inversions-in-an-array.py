@@ -22,7 +22,9 @@ def count_inversions_brute(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
-
+# Better Approach
+def count_inversions_better(arr,n):
+    
 # User Input
 lst = []
 n = int(input("Enter the size of the list: "))
@@ -31,5 +33,7 @@ for i in range(n):
     lst.append(element)
 
 # Function Call
-result = count_inversions_brute(lst,n) 
+# result = count_inversions_brute(lst,n) 
+# print(result)
+result = count_inversions_better(lst,n) 
 print(result)
