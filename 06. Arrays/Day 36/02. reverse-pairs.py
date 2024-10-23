@@ -75,6 +75,8 @@ def merge_sort(array, low, high):
 def reverse_pairs_optimal(arr,n):
     merge_sort(arr,0,n-1)
     return count
+# Time Complexity = O(2 n log n)
+# Space Complexity = O(n)
 
 
 # User Input
