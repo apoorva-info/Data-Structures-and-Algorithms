@@ -23,13 +23,69 @@ def reverse_pairs_brute(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
+# Optimal Approach
+def merge(array, low, mid, high):
+    temp_array = []  # Temporary array to store merged elements
+    left = low       # Left Pointer
+    right = mid + 1  # Right Pointer
+    
+    # Merge the two halves into temp_array
+    while left <= mid and right <= high:
+        if array[left] <= array[right]:
+            temp_array.append(array[left])
+            left += 1
+        else:
+            temp_array.append(array[right])
+            right += 1
+    
+    # Append remaining elements of the left half, if any
+    while left <= mid:
+        temp_array.append(array[left])
+        left += 1
+    
+    # Append remaining elements of the right half, if any
+    while right <= high:
+        temp_array.append(array[right])
+        right += 1
+    
+    # Copy the sorted elements back into the original array
+    for i in range(low, high + 1):
+        array[i] = temp_array[i - low]
+count = 0
+def countPairs(arr,low,mid,high):
+    global count
+    right = mid + 1
+    for i in range(low,mid+1):
+        while right <= high and arr[i] > 2 * arr[right]:
+            right += 1
+            count += (right - (mid + 1))
+
+
+def merge_sort(array, low, high):
+    # Recursive function to divide the array and sort the sub-arrays
+    if low == high:
+        return  # Base case: single element
+    else:
+        mid = (low + high) // 2  
+        merge_sort(array, low, mid)     # Sort the left half
+        merge_sort(array, mid + 1, high)  # Sort the right half
+        countPairs(array,low,mid,high)
+        merge(array, low, mid, high)    # Merge the two sorted halves
+
+def reverse_pairs_optimal(arr,n):
+    merge_sort(arr,0,n-1)
+    return count
+
+
 # User Input
 size = int(input(f"Enter the size of the array: "))
 array = []
 for i in range(size):
     element = int(input(f"Enter the element at array[{i}]: "))
     array.append(element)
-    
+
 # Function Call
-result = reverse_pairs_brute(array,size)
+# result = reverse_pairs_brute(array,size)
+# print(result)
+result = reverse_pairs_optimal(array,size)
 print(result)
