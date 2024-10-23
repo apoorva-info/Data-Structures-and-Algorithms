@@ -26,7 +26,7 @@ def count_inversions_brute(arr,n):
 count = 0
 # Merge Algorithm
 def merge(array, low, mid, high):
-    global count
+    global count     # Do not use the global variable in the interview.
     temp_array = []  # Temporary array to store merged elements
     left = low       # Left Pointer
     right = mid + 1  # Right Pointer
@@ -54,6 +54,7 @@ def merge(array, low, mid, high):
     # Copy the sorted elements back into the original array
     for i in range(low, high + 1):
         array[i] = temp_array[i - low]
+
 def merge_sort(array, low, high):
     # Recursive function to divide the array and sort the sub-arrays
     if low == high:
@@ -67,6 +68,8 @@ def merge_sort(array, low, high):
 def count_inversions_better(arr,n):
     merge_sort(arr,0,n-1)
     return count
+# Time Complexity = O(n log n)
+# Space Complexity = O(n) --> For the temporary array that was used while merging.
 
     
 # User Input
