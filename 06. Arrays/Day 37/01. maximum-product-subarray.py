@@ -35,26 +35,25 @@ def maximum_product_subarray_better(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
-# Optimal Approach
+# Optimal Approach:
+# 1. If all the numbers are positive.
+# 2. If there are odd number of negative values.
+# 3. If there are even number of negative values.
+# 4. If there are zeroes.
+
 def maximum_product_subarray_optimal(arr,n):
-    max_product_list = []
     max_product = float('-inf')
+    prefix = 1
+    suffix = 1
     for i in range(n):
-        if arr[i] < 0:
-            continue
-        else:
-            product = 1
-            while arr[i] > 0:
-                product = arr[i] * product
-                max_product = max(max_product,product)
-                max_product_list.append(max_product)
+        if prefix == 0:
+            prefix = 1
+        if suffix == 0:
+            suffix = 1
+        prefix = prefix * arr[i]
+        suffix = suffix * arr[n-i-1]
+        max_product = max(max_product, max(prefix,suffix))
     return max_product
-        
-        
-
-
-
-
 
 # User Input
 size = int(input(f"Enter the size of the array: "))
