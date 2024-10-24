@@ -55,6 +55,9 @@ def maximum_product_subarray_optimal(arr,n):
         max_product = max(max_product, max(prefix,suffix))
     return max_product
 
+# Time Complexity = O(n)
+# Space Complexity = O(1)
+
 # User Input
 size = int(input(f"Enter the size of the array: "))
 array = []
