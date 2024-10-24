@@ -18,6 +18,9 @@ def maximum_product_subarray_brute(arr,n):
             max_product = max(product,max_product)
     return max_product
 
+# Time Complexity = O(n^2)
+# Space Complexity = O(1)
+
 
 
 
