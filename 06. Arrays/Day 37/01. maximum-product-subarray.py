@@ -18,10 +18,11 @@ def maximum_product_subarray_brute(arr,n):
                 product = product * arr[k]
                 max_product = max(product,max_product)
     return max_product
+
 # Time Complexity = O(n^3)
 # Space Complexity = O(1)
 
-
+# Better Approach
 def maximum_product_subarray_better(arr,n):
     max_product = float('-inf')
     for i in range(n):
@@ -34,6 +35,16 @@ def maximum_product_subarray_better(arr,n):
 # Time Complexity = O(n^2)
 # Space Complexity = O(1)
 
+# Optimal Approach
+def maximum_product_subarray_optimal(arr,n):
+    max_product = float('-inf')
+    product = 1
+    arr = sorted(arr)
+    for i in range(n):
+        if arr[i] > 0:
+            product = arr[i] * product
+            max_product = max(max_product,product)
+    return max_product
 
 
 
@@ -47,8 +58,11 @@ for i in range(size):
     array.append(element)
 
 # Function Call
-result = maximum_product_subarray_brute(array,size)
-print(result)
+# result = maximum_product_subarray_brute(array,size)
+# print(result)
 
 # result = maximum_product_subarray_better(array,size)
 # print(result)
+
+result = maximum_product_subarray_optimal(array,size)
+print(result)
