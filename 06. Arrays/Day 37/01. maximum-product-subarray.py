@@ -37,14 +37,20 @@ def maximum_product_subarray_better(arr,n):
 
 # Optimal Approach
 def maximum_product_subarray_optimal(arr,n):
+    max_product_list = []
     max_product = float('-inf')
-    product = 1
-    arr = sorted(arr)
     for i in range(n):
-        if arr[i] > 0:
-            product = arr[i] * product
-            max_product = max(max_product,product)
+        if arr[i] < 0:
+            continue
+        else:
+            product = 1
+            while arr[i] > 0:
+                product = arr[i] * product
+                max_product = max(max_product,product)
+                max_product_list.append(max_product)
     return max_product
+        
+        
 
 
 
