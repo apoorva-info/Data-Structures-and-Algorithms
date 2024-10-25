@@ -3,14 +3,26 @@
 
 # Goal: Given a sorted array, return the index of a given target value.
 
-# Brute Force Approach --> Using Linear Search
-def search_target(arr,n,target):
+# Linear Search
+def search_target_linear(arr,n,target):
     for i in range(n):
         if arr[i] == target:
             return i
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
+def search_target_binary(arr,n,target):
+    mid = n//2
+    while target < arr[mid]:
+        mid = mid // 2
+        if target == arr[mid]:
+            return mid
+        
+
+
+
+
+    
 
 
 
@@ -23,5 +35,5 @@ for i in range(size):
 target_value = int(input("Enter the value that you want to search: "))
 
 # Function Call
-result = search_target(array,size,target_value)
+result = search_target_linear(array,size,target_value)
 print(result)
