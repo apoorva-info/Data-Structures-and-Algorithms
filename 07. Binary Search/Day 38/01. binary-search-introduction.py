@@ -50,6 +50,8 @@ def recursive_code(arr,low,high,target):
             return recursive_code(arr,low,mid-1,target)
         else:
             return recursive_code(arr,mid+1,high,target)
+# Time Complexity = O(log n)
+# Space Complexity = O(log n) --> Temporary space used
         
 # User Input
 size = int(input(f"Enter the size of the array: "))
@@ -60,9 +62,9 @@ for i in range(size):
 target_value = int(input("Enter the value that you want to search: "))
 
 # Function Call
-# result = search_target_linear(array,size,target_value)
+# result = search_target_linear(array, size, target_value)
 # print(result)
-# result = search_target_binary(array,size,target_value)
+# result = search_target_binary(array, size, target_value)
 # print(result)
-result = recursive_code(array,size,target_value)
+result = recursive_code(array, 0, size - 1, target_value)
 print(result)
