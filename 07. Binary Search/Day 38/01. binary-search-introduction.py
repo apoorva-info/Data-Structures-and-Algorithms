@@ -26,6 +26,21 @@ def search_target_binary(arr,n,target):
             low = mid + 1
     return -1
 
+# Recursive Binary Search Code
+def recursive_code(arr,low,high,target):
+    if low > high:
+        return -1
+    else:
+        mid = (low + high)//2
+        if target == arr[mid]:
+            return mid 
+        elif target < arr[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+        
+
+
 
     
 
