@@ -2,6 +2,7 @@
 # Search in a sorted area
 
 # Goal: Given a sorted array, return the index of a given target value.
+
 # Example:
 # Input:
 # Enter the size of the array: 6
@@ -66,5 +67,21 @@ target_value = int(input("Enter the value that you want to search: "))
 # print(result)
 # result = search_target_binary(array, size, target_value)
 # print(result)
-result = recursive_code(array, 0, size - 1, target_value)
-print(result)
+# result = recursive_code(array, 0, size - 1, target_value)
+# print(result)
+
+# Overflow Case:
+# if low = 0 and high = int(inf) i.e. infinity
+# Might happen that low = int(inf) then mid = 2 * int(inf) which cannot be stored in an integer.
+# Take mid = low - ((high - low)//2) to avoid the case of overflow.
+
+# Explanation:
+# In binary search, we usually find the middle index with: mid = (low + high) // 2.
+# But if `low` and `high` are both large numbers, adding them directly (low + high) can create a number
+# that’s too big to store correctly, causing an "overflow" error in some systems.
+#
+# Solution:
+# To prevent this, we can rewrite the formula as: mid = low + (high - low) // 2.
+# This way, instead of adding two large numbers, we subtract first to get a smaller number (high - low),
+# then divide by 2, and finally add `low` to find `mid`.
+# This keeps `mid` within safe limits and avoids overflow!
