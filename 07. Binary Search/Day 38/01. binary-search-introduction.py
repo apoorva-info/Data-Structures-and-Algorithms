@@ -11,12 +11,21 @@ def search_target_linear(arr,n,target):
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
+# Search space: Everything between low and high.
 def search_target_binary(arr,n,target):
-    mid = n//2
-    while target < arr[mid]:
-        mid = mid // 2
-        if target == arr[mid]:
-            return mid
+    low = 0 
+    high = n - 1
+    mid = (low + high)//2
+    while low != high != mid:
+        if target < arr[mid]:
+            high = mid - 1
+            mid = (low + high)//2
+        elif target > arr[mid]:
+            low = mid + 1
+            mid = (low + high)//2
+    return low
+
+
         
 
 
