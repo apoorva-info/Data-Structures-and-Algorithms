@@ -13,7 +13,8 @@ def upper_bound(arr,n,x):
         else:
             low = mid + 1
     return ans
-
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
