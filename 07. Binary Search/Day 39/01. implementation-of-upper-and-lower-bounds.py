@@ -12,6 +12,8 @@ def lower_bound(arr,n,x):
         else:
             low = mid + 1
     return ans
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
             
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
@@ -21,5 +23,6 @@ for i in range(size):
     array.append(element)
 x = int(input("Enter the value whose lower bound is to found: "))
 
+# Function Call
 result = lower_bound(array,size,x)
 print(result)
