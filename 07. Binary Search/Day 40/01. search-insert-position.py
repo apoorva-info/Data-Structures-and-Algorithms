@@ -14,7 +14,8 @@ def search_insert_position(arr,n,target):
         else:
             low = mid + 1
     return ans
-
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 
 # User Input
