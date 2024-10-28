@@ -37,7 +37,29 @@ def lower_bound(arr,n,x):
         else:
             low = mid + 1     
     return ans
-        
+
+def upper_bound(arr,n,x):
+    low = 0
+    high = n - 1
+    ans = n
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] > x:
+            ans = mid
+            high = mid - 1
+        else:
+            low = mid + 1     
+    return ans
+
+def first_and_last_occurrence_using_binary_search(arr,n,x):
+    lb = lower_bound(arr,n,x)
+    if lb == n or arr[lb] != x:
+        return (-1,-1)
+    else:
+        return {lb,upper_bound(arr,n,x)-1}
+
+
+
 
 
 
@@ -51,5 +73,8 @@ for i in range(size):
 x = int(input("Enter the value of the target: "))
 
 # Function Call
-result = first_and_last_occurrence_brute(array,size,x)
-print(first_and_last_occurrence_brute)
+# result = first_and_last_occurrence_brute(array,size,x)
+# print(first_and_last_occurrence_brute)
+
+result = first_and_last_occurrence_using_binary_search(array,size,x)
+print(result)
