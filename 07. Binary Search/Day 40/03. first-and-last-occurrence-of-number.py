@@ -9,7 +9,7 @@
 # Enter the element at array[4]: 5
 # Enter the value of the target: 2
 # Output:
-# Floor Value:  (1, 2)
+# (1, 2)
 
 # Brute Force Approach
 def first_and_last_occurrence_brute(arr,n,x):
@@ -21,6 +21,8 @@ def first_and_last_occurrence_brute(arr,n,x):
                 first = i
             last = i
     return first,last
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 
 
@@ -35,5 +37,5 @@ for i in range(size):
 x = int(input("Enter the value of the target: "))
 
 # Function Call
-floor_value_result = first_and_last_occurrence_brute(array,size,x)
-print("Floor Value: ", floor_value_result)
+result = first_and_last_occurrence_brute(array,size,x)
+print(first_and_last_occurrence_brute)
