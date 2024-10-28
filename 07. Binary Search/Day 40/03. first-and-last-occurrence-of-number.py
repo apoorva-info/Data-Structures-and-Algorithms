@@ -74,7 +74,19 @@ def first_and_last_without_lb_and_ub(arr,n,x):
             high = mid - 1
         else:
             low = mid + 1
-    return first
+    
+    last = -1
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] == x:
+            last = mid
+            low = mid + 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return first,last
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
