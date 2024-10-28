@@ -90,7 +90,15 @@ def last_occurrence(arr,n,x):
         else:
             low = mid + 1
     return last
-    
+
+def first_and_last_without_lb_and_ub(arr,n,x):
+    first = first_occurrence(arr,n,x)
+    if first == -1:
+        return {-1,-1}
+    last = last_occurrence(arr,n,x)
+    return {first,last}
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
