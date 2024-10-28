@@ -21,7 +21,7 @@ def first_and_last_occurrence_brute(arr,n,x):
                 first = i
             last = i
     return first,last
-# Time Complexity = O(n)
+# Time Complexity = O(log n)
 # Space Complexity = O(1)
 
 # Binary Search
@@ -57,12 +57,8 @@ def first_and_last_occurrence_using_binary_search(arr,n,x):
         return (-1,-1)
     else:
         return {lb,upper_bound(arr,n,x)-1}
-
-
-
-
-
-
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
