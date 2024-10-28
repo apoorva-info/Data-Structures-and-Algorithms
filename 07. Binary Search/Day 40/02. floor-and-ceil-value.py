@@ -1,4 +1,16 @@
 # Goal: To find the floor(largest number <= x) and ceil(smallest number >= x) value n sorted array.
+# Example:
+# Input:
+# Enter the size of the sorted array: 5
+# Enter the element at array[0]: 2
+# Enter the element at array[1]: 3
+# Enter the element at array[2]: 5
+# Enter the element at array[3]: 6
+# Enter the element at array[4]: 8
+# Enter the value of the target: 4
+# Output:
+# Floor Value:  3
+# Ceil Value:  5
 
 # Floor Value
 def floor_value(arr,n,target):
@@ -29,7 +41,8 @@ def ceil_value(arr,n,target):
         else:
             low = mid + 1
     return ans
-
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
