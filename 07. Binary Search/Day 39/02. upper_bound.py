@@ -22,8 +22,9 @@ array = []
 for i in range(size):
     element = int(input(f"Enter the element at array[{i}]: "))
     array.append(element)
-x = int(input("Enter the value whose lower bound is to found: "))
+x = int(input("Enter the value whose upper bound is to be found: "))
 
 # Function Call
 result = upper_bound(array,size,x)
 print(result)
+
