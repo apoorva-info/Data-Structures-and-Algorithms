@@ -60,6 +60,22 @@ def first_and_last_occurrence_using_binary_search(arr,n,x):
 # Time Complexity = O(log n)
 # Space Complexity = O(1)
 
+# Without using lower bound and upper bound function
+def first_and_last_without_lb_and_ub(arr,n,x):
+    low = 0
+    high = n - 1
+    first = -1
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] == x:
+            first = mid
+            high = mid - 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return first
+
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
 array = []
@@ -72,5 +88,8 @@ x = int(input("Enter the value of the target: "))
 # result = first_and_last_occurrence_brute(array,size,x)
 # print(first_and_last_occurrence_brute)
 
-result = first_and_last_occurrence_using_binary_search(array,size,x)
+# result = first_and_last_occurrence_using_binary_search(array,size,x)
+# print(result)
+
+result = first_and_last_without_lb_and_ub(array,size,x)
 print(result)
