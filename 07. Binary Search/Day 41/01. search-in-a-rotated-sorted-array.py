@@ -7,6 +7,8 @@ def linear_search(arr,n,x):
         if arr[i] == x:
             return i
     return -1
+#  Time Complexity = O(n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
