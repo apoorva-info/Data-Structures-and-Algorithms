@@ -10,6 +10,19 @@ def linear_search(arr,n,x):
 #  Time Complexity = O(n)
 # Space Complexity = O(1)
 
+def binary_search(arr,n,x):
+    low = 0
+    high = 1
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            high = mid + 1
+        else:
+            low = mid - 1
+    return -1
+
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
 array = []
@@ -19,5 +32,7 @@ for i in range(size):
 x = int(input("Enter the value of the target: "))
 
 # Function Call
-result = linear_search(array,size,x)
+# result = linear_search(array,size,x)
+# print(result)
+result = binary_search(array,size,x)
 print(result)
