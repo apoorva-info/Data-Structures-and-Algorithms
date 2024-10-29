@@ -28,7 +28,8 @@ def binary_search(arr,n,x):
             else:
                 high = mid - 1
     return -1
-
+#  Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
