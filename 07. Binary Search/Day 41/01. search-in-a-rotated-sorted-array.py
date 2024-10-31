@@ -7,7 +7,7 @@
 # Enter the element at array[1]: 6
 # Enter the element at array[2]: 8
 # Enter the value of the target: 9
-# Output
+# Output:
 # -1
 
 # Linear Search
