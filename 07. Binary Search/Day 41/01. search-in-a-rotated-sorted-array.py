@@ -1,5 +1,14 @@
 # Goal: Given a rotated sorted array with distinct values and a target value, find the index at which target value is present and if not, 
 # return -1.
+# Example:
+# Input:
+# Enter the size of the sorted array: 3
+# Enter the element at array[0]: 5
+# Enter the element at array[1]: 6
+# Enter the element at array[2]: 8
+# Enter the value of the target: 9
+# Output:
+# -1
 
 # Linear Search
 def linear_search(arr,n,x):
