@@ -7,7 +7,9 @@ def search_element_in_rotated_sorted_array_brute(arr,x):
         if element == x:
             return True
     return False
-    
+
+# Time Complexity = O(n) ---> Loop runs n times 
+# Space Complexity = O(1) ---> No extra space is being used 
 
 
 
