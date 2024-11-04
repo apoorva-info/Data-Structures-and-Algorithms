@@ -34,7 +34,9 @@ def search_element_in_rotated_sorted_array_optimal(arr,n,x):
             else:
                 high = mid - 1
     return False
-    
+
+# Time Complexity = Worst Case: O(n/2) || Best and Average Case: O(log n) 
+# Space Complexity = O(1) ---> No extra space is being used     
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
