@@ -18,12 +18,28 @@ def minimum_brute(arr):
     for i in arr:
         min_value = min(i, min_value)
     return min_value
-
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
-
-
+# Optimal Approach
+# 1. Find the sorted half.
+# 2. Sorted half may or may not have the answer.
+def minimum_optimal(arr,n):
+    low = 0
+    high = n - 1
+    min_value = float('inf')
+    while low <= high:
+        mid = (low + high)//2
+        if arr[low] <= arr[mid]:
+            min_value = min(arr[low],min_value)
+            low = mid + 1
+        else:
+            min_value = min(arr[mid],min_value)
+            high = mid - 1
+    return min_value
+# Time Complexity = O(log n)
+# Space Complexity = O(1)     
+        
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
 array = []
@@ -32,5 +48,7 @@ for i in range(size):
     array.append(element)
 
 # Function Call
-result = minimum_brute(array)
+# result = minimum_brute(array)
+# print(result)
+result = minimum_optimal(array,size)
 print(result)
