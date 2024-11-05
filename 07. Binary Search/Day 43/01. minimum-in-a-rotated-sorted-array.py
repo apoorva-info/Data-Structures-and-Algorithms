@@ -30,6 +30,10 @@ def minimum_optimal(arr,n):
     min_value = float('inf')
     while low <= high:
         mid = (low + high)//2
+        # If the search space is already sorted then arr[low] <= arr[high]
+        if arr[low] <= arr[high]:
+            min_value = min(arr[low],min_value)
+            break
         if arr[low] <= arr[mid]:
             min_value = min(arr[low],min_value)
             low = mid + 1
