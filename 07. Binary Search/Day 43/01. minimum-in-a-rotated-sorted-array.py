@@ -1,4 +1,16 @@
 # Goal: Find the minimum in a rotated sorted array.
+# Example:
+# Input:
+# Enter the size of the sorted array: 7
+# Enter the element at array[0]: 4
+# Enter the element at array[1]: 5
+# Enter the element at array[2]: 6
+# Enter the element at array[3]: 7
+# Enter the element at array[4]: 0
+# Enter the element at array[5]: 1
+# Enter the element at array[6]: 2
+# Output:
+# 0
 
 # Brute Force Approach
 def minimum_brute(arr):
@@ -6,6 +18,9 @@ def minimum_brute(arr):
     for i in arr:
         min_value = min(i, min_value)
     return min_value
+
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 
 
