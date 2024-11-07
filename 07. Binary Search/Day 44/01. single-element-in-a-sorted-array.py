@@ -16,7 +16,7 @@
 # Output:
 # 4
 
-# Brute Force Approach
+# Brute Force Approach: Linear Search
 def single_element_brute(arr,n):
     if n == 1:
         return arr[0]
@@ -36,6 +36,10 @@ def single_element_brute(arr,n):
             
 # Time Complexity = O(n)
 # Space Complexity = O(1)
+
+# Binary Search
+# (even,odd) ---> Element is on the right half
+# (odd,even) ---> Element is on the left half
 
 
 
