@@ -30,6 +30,9 @@ def single_element_brute(arr,n):
         else:
             if arr[i] != arr[i-1] and arr[i] != arr[i+1]:
                 return arr[i]
+            
+# Time Complexity = O(n)
+# Space Complexity = O(1)
 
 
 
