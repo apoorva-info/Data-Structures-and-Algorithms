@@ -18,18 +18,21 @@
 
 # Brute Force Approach
 def single_element_brute(arr,n):
-    for i in range(n):
-        if i == 0:
-            if arr[i] != arr[i+1]:
-                return arr[i]
+    if n == 1:
+        return arr[0]
+    else:
+        for i in range(n):
+            if i == 0:
+                if arr[i] != arr[i+1]:
+                    return arr[i]
 
-        elif i == n-1:
-            if arr[i] != arr[i-1]:
-                return arr[i]
+            elif i == n-1:
+                if arr[i] != arr[i-1]:
+                    return arr[i]
 
-        else:
-            if arr[i] != arr[i-1] and arr[i] != arr[i+1]:
-                return arr[i]
+            else:
+                if arr[i] != arr[i-1] and arr[i] != arr[i+1]:
+                    return arr[i]
             
 # Time Complexity = O(n)
 # Space Complexity = O(1)
