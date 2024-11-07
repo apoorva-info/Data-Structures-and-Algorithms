@@ -41,7 +41,20 @@ def single_element_brute(arr,n):
 # (even,odd) ---> Element is on the right half
 # (odd,even) ---> Element is on the left half
 
-
+def single_element_binary(arr,n):
+    low = 0
+    high = n - 1
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] != arr[mid + 1] and arr[mid] != arr[mid - 1]:
+            return arr[mid]
+        if mid % 2 == 0:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+            
+        
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
@@ -51,5 +64,7 @@ for i in range(size):
     array.append(element)
 
 # Function Call
-result = single_element_brute(array,size)
+# result = single_element_brute(array,size)
+# print(result)
+result = single_element_binary(array,size)
 print(result)
