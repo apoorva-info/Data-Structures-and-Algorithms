@@ -59,8 +59,8 @@ def single_element_binary(arr,n):
                 low = mid + 1
             else:
                 high = mid - 1
-            
-        
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
