@@ -16,7 +16,7 @@ def peak_element_brute(arr,n):
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
-# Optimal Approach: If there is a single peak element in an array.
+# Optimal Approach
 def peak_element_optimal(arr,n):
     if n == 1: # Case 1: If there is a single element in an array.
         return arr[n]
