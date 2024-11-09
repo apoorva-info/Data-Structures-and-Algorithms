@@ -18,10 +18,13 @@ def peak_element_brute(arr,n):
 
 # Optimal Approach
 def peak_element_optimal(arr,n):
-    if n == 1:
+    if n == 1: # Case 1: If there is a single element in an array.
         return arr[n]
-    if (i == 0 or arr[i] > arr[i - 1]) and (i == n - 1 or arr[i] > arr[i + 1]):
+    if arr[0] > arr[1]: # Case 2: If the first element is the peak element.
         return arr[i]
+    if arr[n-1] > arr[n-2]: # Case 3: If the last element is the peak element.
+        return arr[n-1]
+    
     else:
         low = 0
         high = n - 1
