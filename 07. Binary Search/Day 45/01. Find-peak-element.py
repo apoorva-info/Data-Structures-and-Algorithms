@@ -26,16 +26,16 @@ def peak_element_optimal(arr,n):
         return arr[n-1]
     
     else:
-        low = 0
-        high = n - 1
+        low = 1
+        high = n - 2
         while low <= high:
             mid = (low + high)//2
             if arr[mid] > arr[mid + 1] and arr[mid] > arr[mid - 1]:
                 return mid
             if arr[mid] > arr[mid - 1]:
-                low = mid - 1
+                low = mid + 1
             else:
-                high = mid + 1
+                high = mid - 1
 
 
 # User Input
