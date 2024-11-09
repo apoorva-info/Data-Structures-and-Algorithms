@@ -16,7 +16,7 @@ def peak_element_brute(arr,n):
 # Time Complexity = O(n)
 # Space Complexity = O(1)
 
-# Optimal Approach
+# Optimal Approach: If there is a single peak element in an array.
 def peak_element_optimal(arr,n):
     if n == 1: # Case 1: If there is a single element in an array.
         return arr[n]
@@ -24,19 +24,20 @@ def peak_element_optimal(arr,n):
         return arr[i]
     if arr[n-1] > arr[n-2]: # Case 3: If the last element is the peak element.
         return arr[n-1]
-    
     else:
         low = 1
         high = n - 2
         while low <= high:
             mid = (low + high)//2
             if arr[mid] > arr[mid + 1] and arr[mid] > arr[mid - 1]:
-                return mid
+                return arr[mid]
             if arr[mid] > arr[mid - 1]:
                 low = mid + 1
             else:
                 high = mid - 1
-
+    return -1
+# Time Complexity = O(log n)
+# Space Complexity = O(1)
 
 # User Input
 size = int(input(f"Enter the size of the sorted array: "))
