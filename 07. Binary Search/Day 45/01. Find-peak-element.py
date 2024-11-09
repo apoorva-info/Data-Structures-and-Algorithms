@@ -18,6 +18,8 @@ def peak_element_brute(arr,n):
 
 # Optimal Approach
 def peak_element_optimal(arr,n):
+    if n == 1:
+        return arr[n]
     if (i == 0 or arr[i] > arr[i - 1]) and (i == n - 1 or arr[i] > arr[i + 1]):
         return arr[i]
     else:
