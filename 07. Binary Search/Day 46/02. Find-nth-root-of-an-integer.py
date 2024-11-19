@@ -6,31 +6,30 @@ def f(i,n):
 
 def find_sqrt_brute(num,n):
     i = 1
-    ans = 0
     for i in range(1,num+1):
-        if f(i,n)  <= num:
-            ans = i
-        else:
+        if f(i,n)  == num:
+            return i
+        elif f(i,n) > num:
             break
-    return ans
-# Time Complexity: O(n)
+    return -1
+# Time Complexity: O(m*n)
 # Space Complexity: O(1)
 
 # Binary Search Approach
 def find_sqrt_better(num,n):
     low = 1
     high = num
-    ans = 0
     while high >= low:
         mid = (low + high)//2
         if f(mid,n) > num:
             high = mid - 1
-        else:
-            ans = mid
+        elif f(mid,n) < num:
             low = mid + 1
-    return ans
+        else:
+            return mid
+    return -1
 
-# Time Complexity: O(log n)
+# Time Complexity: O((log n)*(log m))
 # Space Complexity: O(1)
 
 #  User Input
