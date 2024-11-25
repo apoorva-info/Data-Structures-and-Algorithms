@@ -20,7 +20,7 @@ def minimum_days_brute(lst,size,k,m):
 # Time Complexity: O(n * (max(lst)- min(lst) + 1))
 # Space Complexity: O(1)
 
-def possible_condition(lst,size,mid,k,m):
+def possible_condition(lst,size,mid,k):
     count = 0
     temp = 0
     for i in range(size):
@@ -30,25 +30,28 @@ def possible_condition(lst,size,mid,k,m):
             temp += (count//k)
             count = 0
     temp += (count//k)
-    if temp == m:
-        return mid
-    else:
-        return -1
+    return temp
                     
             
+def minimum_days_better(lst,size,k,m):
+    if size < (m*k):
+        return -1
+    else:
+        low = min(lst)
+        high = max(lst)
+        ans = 0
+        while low <= high:
+            mid = (low + high)//2
+            if possible_condition(lst,size,mid,k) >= m:
+                ans = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+        return ans
+# Time Complexity: O(n * log(max(lst)- min(lst) + 1))
+# Space Complexity: O(1)
 
-            
-
-
-        
-
-
-
-            
-
-
-
-
+# User Input
 k = int(input("Enter the number of flowers in a bouquet: ")) # Number of flowers in a bouquet
 m = int(input("Enter the total number of bouquets: ")) # Total number of bouquets
 
@@ -58,8 +61,11 @@ lst = []
 for i in range(size):
     element = int(input(f"Enter the {i+1}th element: "))
     lst.append(element)
-
 print(lst)
 
-result = minimum_days_brute(lst,size,k,m)
+# Function Call
+# result = minimum_days_brute(lst,size,k,m)
+# print(result)
+
+result = minimum_days_better(lst,size,k,m)
 print(result)
