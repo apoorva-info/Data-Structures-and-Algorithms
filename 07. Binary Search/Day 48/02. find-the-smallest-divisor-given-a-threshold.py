@@ -26,6 +26,8 @@ def sum_of_values(lst,mid):
 def smallest_divisor_better(lst,size,limit):
     low = 1
     high = max(lst)
+    if size > limit:
+        return -1
     while low <= high:
         mid = (low + high)//2
         if sum_of_values(lst,mid) <= limit:
