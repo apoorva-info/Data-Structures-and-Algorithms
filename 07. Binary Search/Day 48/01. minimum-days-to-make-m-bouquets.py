@@ -4,18 +4,19 @@ def minimum_days_brute(lst,size,k,m):
     if size < (m*k): # Base Case
         return -1
     else:
-        count = 0
-        temp = 0 # For counting number of bouquets
         for day in range(min(lst),max(lst)+1):
+            count = 0
+            temp = 0 # For counting number of bouquets
             for i in range(size):
                 if lst[i] <= day:
                     count += 1
                 else:
-                    temp += (count/k)
+                    temp += (count//k)
                     count = 0
-            temp += (count/k)
+            temp += (count//k) # To add the final bouquet
             if temp == m:
                 return day
+        return -1
         
 
                 
