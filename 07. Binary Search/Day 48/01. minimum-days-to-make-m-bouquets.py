@@ -17,10 +17,30 @@ def minimum_days_brute(lst,size,k,m):
             if temp == m:
                 return day
         return -1
-# Time Complexity: O(n * (max(lst)- min(lst)))
+# Time Complexity: O(n * (max(lst)- min(lst) + 1))
 # Space Complexity: O(1)
+
+def possible_condition(lst,size,mid,k,m):
+    count = 0
+    temp = 0
+    for i in range(size):
+        if lst[i] <= mid:
+            count += 1 
+        else:
+            temp += (count//k)
+            count = 0
+    temp += (count//k)
+    if temp == m:
+        return mid
+    else:
+        return -1
                     
             
+
+            
+
+
+        
 
 
 
