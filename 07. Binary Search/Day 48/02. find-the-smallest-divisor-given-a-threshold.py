@@ -34,7 +34,8 @@ def smallest_divisor_better(lst,size,limit):
         else:
             low = mid + 1
     return ans
-
+# Time Complexity: O(log(max(lst))*n)
+# Space Complexity: O(1)
         
 # User Input
 size = int(input("Enter the size of the array: "))
