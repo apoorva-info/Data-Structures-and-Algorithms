@@ -4,10 +4,10 @@ def minimum_days_brute(lst,size,k,m):
     if size < (m*k): # Base Case
         return -1
     else:
-        for day in range(min(lst),max(lst)+1):
+        for day in range(min(lst),max(lst)+1): # This loop will run from min(lst) to max(lst)
             count = 0
             temp = 0 # For counting number of bouquets
-            for i in range(size):
+            for i in range(size): # This loop will run from 0 to size of the array
                 if lst[i] <= day:
                     count += 1
                 else:
@@ -17,9 +17,8 @@ def minimum_days_brute(lst,size,k,m):
             if temp == m:
                 return day
         return -1
-        
-
-                
+# Time Complexity: O(n * (max(lst)- min(lst)))
+# Space Complexity: O(1)
                     
             
 
