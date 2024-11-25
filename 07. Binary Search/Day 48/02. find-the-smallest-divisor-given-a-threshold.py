@@ -1,7 +1,7 @@
 # Goal: To find the smallest divisor given a threshold value.
 
+# Brute Force Approach
 import math
-
 def smallest_divisor_brute(lst,size,limit):
     ans = float('inf')
     for divisor in range(1,max(lst)+1):
@@ -14,6 +14,19 @@ def smallest_divisor_brute(lst,size,limit):
     return ans
 # Time Complexity: O(n * max(lst))
 # Space Complexity: O(1)
+
+# Better Approach
+def sum_of_values(lst,mid):
+    ans = float('inf')
+    sum_of_values = 0
+    for i in lst:
+        ceil_value = math.ceil(i/mid)
+        sum_of_values = sum_of_values + ceil_value
+    return sum_of_values
+
+
+
+        
 
 
 # User Input
