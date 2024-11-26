@@ -31,11 +31,8 @@ def least_capacity_better(arr,days):
         else:
             low = mid + 1
     return low
-    
-
-
-
-
+# Time Complexity: O(n * log(sum(arr)-max(arr)+1))
+# Space Complexity: O(1)
         
 
 # User Input
