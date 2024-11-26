@@ -1,8 +1,15 @@
 # Goal: To find the least capacity to ship the packages within d days
+def daysReq(arr,capacity):
+    d = 1, sum_of_loads = 0
+    for i in arr:
+        if (sum_of_loads + i) > capacity:
+            d += 1
+            sum_of_loads = i 
+        else:
+            sum_of_loads += i
+    return d
 
 def least_capacity_brute(arr,n,days):
-    sum_of_weights = 0
-    count = 0
     for capacity in range(max(arr),sum(arr)+1):
         days_required = daysReq(arr,capacity)
         if days_required <= days:
