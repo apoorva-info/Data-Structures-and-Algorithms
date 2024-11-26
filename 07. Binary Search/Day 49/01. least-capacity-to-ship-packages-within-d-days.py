@@ -15,8 +15,9 @@ def least_capacity_brute(arr,days):
         days_required = daysReq(arr,capacity)
         if days_required <= days:
             return capacity
-
-            
+# Time Complexity: O(n*(sum(arr)-max(arr)+1))
+# Space Complexity: O(1)
+         
     
 
 
