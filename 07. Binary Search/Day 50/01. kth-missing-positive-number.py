@@ -23,12 +23,8 @@ def missing_number_better(arr,n,k):
         else:
             high = mid - 1
     return (high + 1 + k)
-
-    
-
-
-
-
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
 
 
 # User Input
@@ -42,5 +38,7 @@ print(arr)
 k = int(input("Enter the value of k: "))
 
 # Function Call
-result = missing_number_brute(arr,size,k) 
+# result = missing_number_brute(arr,size,k) 
+# print(result)
+result = missing_number_better(arr,size,k) 
 print(result)
