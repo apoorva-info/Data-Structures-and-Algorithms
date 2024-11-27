@@ -2,7 +2,6 @@
 
 # Brute Force Approach
 def missing_number_brute(nums,n,k):
-    max_num = max(nums)
     for i in range(n):
         if nums[i] <= k:
             k += 1
@@ -11,6 +10,14 @@ def missing_number_brute(nums,n,k):
     return k
 # Time Complexity: O(n)
 # Space Complexity: O(1)
+
+# Better Approach
+def missing_number_better(arr,n,k):
+    low = 1
+    high = max(arr)
+    # while low <= high:
+
+
 
 
 
