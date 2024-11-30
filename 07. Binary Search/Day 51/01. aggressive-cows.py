@@ -1,7 +1,20 @@
 # Goal: Find the maximum possible minimum distance between the two cows.
 
 # Brute Force Approach
-def max_possible_min_distance_brute(arr,n,c):
+def canWePlace(arr,distance,cows):
+    count = 1
+    last = arr[0]
+    for i in arr:
+        if arr[i] - last >= distance:
+            count += 1
+            last = arr[i]
+    if count >= cows:
+        return True
+    else:
+        return False
+
+
+def max_possible_min_distance_brute(arr,c):
     for i in range(1,max-min):
         if canWePlace(arr,i,c) == True:
             continue
