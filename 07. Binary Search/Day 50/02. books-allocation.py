@@ -10,6 +10,17 @@
 # If the allocation of books is not possible, return -1
 
 # Brute Force Approach
+def fun(arr,i):
+    count = 1
+    pages_student = 0
+    for j in arr:
+        if pages_student + j <= i:
+            pages_student += j
+        else:
+            count += 1
+            pages_student = j
+    return count
+
 def books_allocation_brute(arr,n,m):
     if m > n:
         return -1
