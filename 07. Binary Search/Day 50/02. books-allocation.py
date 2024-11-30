@@ -25,7 +25,7 @@ def books_allocation_brute(arr,n,m):
     if m > n:
         return -1
     else:
-        low = min(arr)
+        low = max(arr)
         high = sum(arr)
         for i in range(low,high+1):
             count_students = fun(arr,i)
@@ -34,7 +34,23 @@ def books_allocation_brute(arr,n,m):
 # Time Complexity: O(sum - max) * O(n) 
 # Space Complexity: O(1)
 
-
+# Better Approach
+def books_allocation_better(arr,n,m):
+    if m > n:
+        return -1 
+    else:
+        low = max(arr)
+        high = sum(arr)
+        while low <= high:
+            mid = (low + high)//2
+            count_students = fun(arr,mid)
+            if count_students > m:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return low
+# Time Complexity: O(log(sum - max)) * O(n) 
+# Space Complexity: O(1)
 
 # User Input
 students = int(input("Enter the number of students: "))
@@ -47,5 +63,7 @@ for i in range(num):
 print(books)
 
 # Function Call
-result = books_allocation_brute(books,num,students)
+# result = books_allocation_brute(books,num,students)
+# print(result)
+result = books_allocation_better(books,num,students)
 print(result)
