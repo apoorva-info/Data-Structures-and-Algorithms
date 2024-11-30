@@ -31,7 +31,8 @@ def books_allocation_brute(arr,n,m):
             count_students = fun(arr,i)
             if count_students == m:
                 return i
-
+# Time Complexity: O(sum - max) * O(n) 
+# Space Complexity: O(1)
 
 
 
