@@ -14,15 +14,15 @@ def canWePlace(arr,distance,cows):
         return False
 
 
-def max_possible_min_distance_brute(arr,c):
-    maxi = max(arr)
-    mini = min(arr)
+def max_possible_min_distance_brute(arr,stalls,c):
+    maxi = arr[stalls-1]
+    mini = arr[0]
     for i in range(1,maxi-mini):
         if canWePlace(arr,i,c) == True:
             continue
         else:
             return i-1
-# Time Complexity: O(max-min)*O(n)
+# Time Complexity: O(maxi-mini)*O(n)
 # Space Complexity: O(1)
 
 # Better Approach
@@ -34,11 +34,12 @@ def max_possible_min_distance_better(arr,stalls,c):
         mid = (low + high)//2
         if canWePlace(arr,mid,c) == True:
             low = mid + 1
-            continue
         else:
             high = mid - 1
     
     return high
+# Time Complexity: O(log(maxi-mini))*O(n)
+# Space Complexity: O(1)
 
 # User Input
 cows = int(input("Enter the number of cows: "))
@@ -55,5 +56,5 @@ positions = sorted(positions)
 # Function Call
 # result = max_possible_min_distance_brute(positions,cows)
 # print(result)
-result = max_possible_min_distance_brute(positions,cows)
+result = max_possible_min_distance_better(positions,stalls,cows)
 print(result)
