@@ -20,7 +20,8 @@ def max_possible_min_distance_brute(arr,c):
             continue
         else:
             return i-1
-
+# Time Complexity: O(max-min)*O(n)
+# Space Complexity: O(1)
 
 # User Input
 cows = int(input("Enter the number of cows: "))
