@@ -14,7 +14,13 @@ def books_allocation_brute(arr,n,m):
     if m > n:
         return -1
     else:
-        
+        low = min(arr)
+        high = sum(arr)
+        for i in range(low,high+1):
+            count_students = fun(arr,i)
+            if count_students == m:
+                return i
+
 
 
 
