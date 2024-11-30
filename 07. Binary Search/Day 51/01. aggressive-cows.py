@@ -25,6 +25,20 @@ def max_possible_min_distance_brute(arr,c):
 # Time Complexity: O(max-min)*O(n)
 # Space Complexity: O(1)
 
+# Better Approach
+def max_possible_min_distance_better(arr,stalls,c):
+    low = 1
+    high = max(arr)-min(arr)
+
+    while low <= high:
+        mid = (low + high)//2
+        if canWePlace(arr,mid,c) == True:
+            low = mid + 1
+            continue
+        else:
+            high = mid - 1
+    
+    return high
 
 # User Input
 cows = int(input("Enter the number of cows: "))
