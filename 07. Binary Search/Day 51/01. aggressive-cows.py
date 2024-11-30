@@ -28,7 +28,7 @@ def max_possible_min_distance_brute(arr,c):
 # Better Approach
 def max_possible_min_distance_better(arr,stalls,c):
     low = 1
-    high = max(arr)-min(arr)
+    high = arr[stalls-1] - arr[0]
 
     while low <= high:
         mid = (low + high)//2
@@ -53,5 +53,7 @@ print(positions)
 positions = sorted(positions)
 
 # Function Call
+# result = max_possible_min_distance_brute(positions,cows)
+# print(result)
 result = max_possible_min_distance_brute(positions,cows)
 print(result)
