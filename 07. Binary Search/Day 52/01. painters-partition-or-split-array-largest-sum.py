@@ -27,7 +27,7 @@ def split_arrays_brute(arr,k,n):
 # Space Complexity: O(1)
 
 # Better Approach
-def split_array_better(arr,k,n):
+def split_arrays_better(arr,k,n):
     if k > n:
         return -1
     else:
@@ -42,6 +42,8 @@ def split_array_better(arr,k,n):
                 high = mid - 1
         return low
 
+# Time Complexity: O(log(sum - max + 1)) * O(n) 
+# Space Complexity: O(1)
 
 
 # User Input
@@ -56,5 +58,7 @@ for i in range(size):
 print(lst)
 
 # Function Call 
-result = split_arrays_brute(lst,k,size)
+# result = split_arrays_brute(lst,k,size)
+# print(result)
+result = split_arrays_better(lst,k,size)
 print(result)
