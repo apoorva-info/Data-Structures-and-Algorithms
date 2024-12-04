@@ -26,6 +26,21 @@ def split_arrays_brute(arr,k,n):
 # Time Complexity: O(sum - max + 1) * O(n) 
 # Space Complexity: O(1)
 
+# Better Approach
+def split_array_better(arr,k,n):
+    if k > n:
+        return -1
+    else:
+        low = max(arr)
+        high = sum(arr)
+        while low <= high:
+            mid = (low + high)//2
+            count_painters = fun(arr,mid)
+            if count_painters > k:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return low
 
 
 
