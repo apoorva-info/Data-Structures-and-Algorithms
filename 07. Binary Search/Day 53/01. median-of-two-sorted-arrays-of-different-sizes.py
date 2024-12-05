@@ -29,7 +29,8 @@ def find_median_brute(arr1,arr2,n1,n2):
     else:
         median = arr[n//2]
         return median
-
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 
 # User Input:
 size1 = int(input("Enter the size of array 1: "))
