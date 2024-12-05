@@ -3,14 +3,15 @@
 # Brute Force Approach
 def find_median_brute(arr1,arr2,n1,n2):
 
-    i = 0 , j = 0
+    i = 0 
+    j = 0
     arr = []
-    while i < n1 & j < n2:
+    while (i < n1 and j < n2):
         if arr1[i] < arr2[j]:
-            arr.append(arr[i])
+            arr.append(arr1[i])
             i += 1
         else:
-            arr.append(arr[j])
+            arr.append(arr2[j])
             j += 1
     while i < n1:
         arr.append(arr1[i])
@@ -20,16 +21,13 @@ def find_median_brute(arr1,arr2,n1,n2):
         j += 1 
     print(arr)
 
-
-
-    n = len(arr)
-    print(arr)
+    n = n1 + n2
 
     if n % 2 == 0:
-        median = (arr[n/2] + arr[(n/2)-1])/2
+        median = (arr[n//2] + arr[(n//2)-1])/2
         return median
     else:
-        median = arr[(n//2)]
+        median = arr[n//2]
         return median
 
 
