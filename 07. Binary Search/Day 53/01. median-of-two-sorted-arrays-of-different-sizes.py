@@ -57,27 +57,31 @@ def find_median_better(arr1,arr2,n1,n2):
                 ind2_element = arr2[j]
             count += 1
             j += 1
-        while(i < n1):
-            if count == ind1:
-                ind1_element = arr1[i]
-            elif count == ind2:
-                ind2_element = arr1[i]
-        while(j < n2):
-            if count == ind1:
-                ind1_element = arr2[j]
-            elif count == ind2:
-                ind2_element = arr2[j]
+
+    while(i < n1):
+        if count == ind1:
+            ind1_element = arr1[i]
+        elif count == ind2:
+            ind2_element = arr1[i]
+        count += 1
+        i += 1
+
+    while(j < n2):
+        if count == ind1:
+            ind1_element = arr2[j]
+        elif count == ind2:
+            ind2_element = arr2[j]
+        count += 1
+        j += 1
         
-        if n % 2 == 0:
-            return (ind1_element + ind2_element)//2
-        else:
-            return ind2_element
+    if n % 2 == 0:
+        return (ind1_element + ind2_element)/2
+    else:
+        return ind2_element
+            
+# Time Complexity: O(n)
+# Space Complexity: O(1)
         
-
-
-
-
-    
 # User Input:
 size1 = int(input("Enter the size of array 1: "))
 arr1 = []
