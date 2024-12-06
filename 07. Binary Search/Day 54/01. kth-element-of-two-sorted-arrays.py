@@ -1,7 +1,7 @@
 # Goal: Find the k-th element of two sorted arrays.
 
 # Brute Force Approach
-def find_element_brute(arr1,arr2,n1,n2):
+def find_element_brute(arr1,arr2,n1,n2,k):
     n = n1 + n2
     arr = []
     i = 0
@@ -21,6 +21,8 @@ def find_element_brute(arr1,arr2,n1,n2):
         j += 1
     print(arr)
 
+    return arr[k-1]
+
 
 
 # User Input:
@@ -38,6 +40,8 @@ for i in range(size2):
     arr2.append(element)
 arr2 = sorted(arr2)
 
+k = int(input("Enter the value of the k-th element: "))
+
 # Function Call
-result = find_element_brute(arr1,arr2,size1,size2)
+result = find_element_brute(arr1,arr2,size1,size2,k)
 print(result)
