@@ -23,6 +23,8 @@ def find_element_brute(arr1,arr2,n1,n2,k):
 
     return arr[k-1]
 
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 
 
 # User Input:
