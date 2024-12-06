@@ -56,6 +56,8 @@ def find_element_better(arr1,arr2,n1,n2,k):
             low = mid1 + 1
     return 0
 
+# Time Complexity: O(log(min(n1,n2)))
+# Space Complexity: O(1)
 
 # User Input:
 size1 = int(input("Enter the size of array 1: "))
