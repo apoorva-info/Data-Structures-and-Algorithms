@@ -24,25 +24,34 @@ def find_row_brute(arr,m,n):
 def find_row_better(arr,m,n):
     max_num = float('-inf')
     max_row = -1
-    for i in range(n):
-        low = 0
-        high = n
+    
+    for i in range(m):
         count = 0
-        while low >= high:
+        low = 0 
+        high = n - 1
+
+        while high >= low:
             mid = (low + high)//2
             if arr[i][mid] == 1:
-                if arr[i][mid - 1] == 0:
-                    for j in range(mid,n):
-                        count += 1
-                    if count > max_num:
-                        max_num = count 
-                        max_row = i
+                if mid == 0 or arr[i][mid - 1] == 0:
+                    count = n - mid 
+                    break
                 else:
-                    low = mid - 1
-            elif arr[i][mid] == 0:
+                    high = mid - 1
+            else:
                 low = mid + 1
+
+        if count > max_num:
+            max_num = count
+            max_row = i
+
+    return max_row
+
+
+
+        
             
-        return max_row
+        
 
 
 
@@ -64,5 +73,7 @@ for i in range(m):
 print(array)
 
 # Function Call
-result = find_row_brute(array,m,n)
+# result = find_row_brute(array,m,n)
+# print(result)
+result = find_row_better(array,m,n)
 print(result)
