@@ -23,7 +23,7 @@ def find_row_brute(arr,m,n):
 
 # Better Approach
 def find_row_better(arr,m,n):
-    max_num = float('-inf')
+    max_num = 0
     max_row = -1
 
     for i in range(m):
