@@ -1,6 +1,9 @@
 # Goal: To find the row with the maximum number of 1's.
+# Note:
+# The elements must be either 0 or 1.
+# Enter the elements in ascending order.
 
-# Brute Force Approach
+# Brute Force Approach (Works for unsorted rows)
 def find_row_brute(arr,m,n):
     max_num = float('-inf')
     max_row = -1
@@ -13,18 +16,17 @@ def find_row_brute(arr,m,n):
             max_num = count 
             max_row = i
             
-        
     return max_row
+# Time Complexity: O(m*n)
+# Space Complexity: O(1)
 
 
 # User Input
 import numpy as np
 m = int(input("Enter the number of rows: "))
 n = int(input("Enter the number of columns: "))
-print("NOTE")
-print("The elements must be either 0 or 1.")
-print("Enter the elements in ascending order.")
-array = np.empty((m,n))
+
+array = np.empty((m,n), dtype=int) # np.empty ---> Creates float array by default. Do initialize the data type.
 for i in range(m):
     for j in range(n):
         array[i,j] = int(input(f"Enter the element at array[{i}][{j}]: "))
