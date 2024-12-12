@@ -17,6 +17,7 @@ def find_row_brute(arr,m,n):
             max_row = i
             
     return max_row
+
 # Time Complexity: O(m*n)
 # Space Complexity: O(1)
 
@@ -24,7 +25,7 @@ def find_row_brute(arr,m,n):
 def find_row_better(arr,m,n):
     max_num = float('-inf')
     max_row = -1
-    
+
     for i in range(m):
         count = 0
         low = 0 
@@ -47,19 +48,9 @@ def find_row_better(arr,m,n):
 
     return max_row
 
-
-
-        
-            
-        
-
-
-
-            
-
-
-
-
+# Time Complexity: O(m * log n)
+# Space Complexity: O(1)
+           
 
 # User Input
 import numpy as np
