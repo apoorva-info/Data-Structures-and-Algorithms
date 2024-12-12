@@ -20,6 +20,37 @@ def find_row_brute(arr,m,n):
 # Time Complexity: O(m*n)
 # Space Complexity: O(1)
 
+# Better Approach
+def find_row_better(arr,m,n):
+    max_num = float('-inf')
+    max_row = -1
+    for i in range(n):
+        low = 0
+        high = n
+        count = 0
+        while low >= high:
+            mid = (low + high)//2
+            if arr[i][mid] == 1:
+                if arr[i][mid - 1] == 0:
+                    for j in range(mid,n):
+                        count += 1
+                    if count > max_num:
+                        max_num = count 
+                        max_row = i
+                else:
+                    low = mid - 1
+            elif arr[i][mid] == 0:
+                low = mid + 1
+            
+        return max_row
+
+
+
+            
+
+
+
+
 
 # User Input
 import numpy as np
