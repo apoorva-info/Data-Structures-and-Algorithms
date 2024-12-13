@@ -1,7 +1,7 @@
 # Goal: To search an element in a 2D matrix.
 
 # Brute Force Approach
-def find_element_brute(arr,m,n):
+def find_element_brute(arr,m,n,target):
     for i in range(m):
         for j in range(n):
             if arr[i][j] == target:
