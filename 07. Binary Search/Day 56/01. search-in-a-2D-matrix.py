@@ -15,15 +15,16 @@ def find_element_brute(arr,m,n,target):
 def find_element_better(arr,m,n,target):
     for i in range(m):
         low = 0
-        high = n
+        high = n - 1
         while low <= high:
             mid = (low + high)//2
-            if mid == target:
+            if arr[i][mid]== target:
                 return True
-            elif mid < target:
+            elif arr[i][mid] < target:
                 low = mid + 1
             else: 
                 high = mid - 1
+    return False
 
 
 
