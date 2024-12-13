@@ -11,6 +11,20 @@ def find_element_brute(arr,m,n,target):
 # Time Complexity: O(m*n)
 # Space Complexity: O(1)
 
+# Better Approach
+def find_element_better(arr,m,n,target):
+    for i in range(m):
+        low = 0
+        high = n
+        while low <= high:
+            mid = (low + high)//2
+            if mid == target:
+                return True
+            elif mid < target:
+                low = mid + 1
+            else: 
+                high = mid - 1
+
 
 
 
@@ -26,6 +40,9 @@ for i in range(m):
 print(array)
 
 target = int(input("Enter the value of the target: "))
+
 # Function Call
-result = find_element_brute(array,m,n, target)
+# result = find_element_brute(array,m,n, target)
+# print(result)
+result = find_element_better(array,m,n, target)
 print(result)
