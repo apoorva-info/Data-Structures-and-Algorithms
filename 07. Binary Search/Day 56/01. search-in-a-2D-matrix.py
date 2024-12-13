@@ -8,6 +8,8 @@ def find_element_brute(arr,m,n,target):
                 return True
     return False
 
+# Time Complexity: O(m*n)
+# Space Complexity: O(1)
 
 
 
