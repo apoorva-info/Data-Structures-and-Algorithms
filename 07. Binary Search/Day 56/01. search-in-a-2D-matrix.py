@@ -29,6 +29,21 @@ def find_element_better(arr,m,n,target):
 # Time Complexity: O(m * log n)
 # Space Complexity: O(1)
 
+# Optimal Approach
+def find_element_optimal(arr,m,n,target):
+    low = 0 
+    high = m * n - 1
+    while low <= high:
+        mid = (low + high)//2
+        row = mid // n
+        column = mid % n
+        if arr[row][column] == target:
+            return True
+        elif arr[row][column] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
 
 # User Input
 import numpy as np
@@ -46,5 +61,7 @@ target = int(input("Enter the value of the target: "))
 # Function Call
 # result = find_element_brute(array,m,n, target)
 # print(result)
-result = find_element_better(array,m,n, target)
+# result = find_element_better(array,m,n, target)
+# print(result)
+result = find_element_optimal(array,m,n, target)
 print(result)
