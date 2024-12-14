@@ -37,7 +37,7 @@ def find_element_optimal(arr,m,n,target):
         elif arr[row][column] < target:
             row += 1
         else:
-            column += 1
+            column -= 1
     return (-1,-1)
 
 # User Input
