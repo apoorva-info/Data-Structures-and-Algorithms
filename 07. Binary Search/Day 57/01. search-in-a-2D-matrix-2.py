@@ -1,7 +1,7 @@
 # Goal: To search an element in a matrix. The last element of each row may/may not be lesser than the first element of the next row.
 
 # Brute Force Approach
-def find_element(arr,m,n,target):
+def find_element_brute(arr,m,n,target):
     for i in range(m):
         for j in range(n):
             if arr[i][j] == target:
@@ -10,7 +10,20 @@ def find_element(arr,m,n,target):
 # Time Complexity: O(m*n)
 # Space Complexity: O(1)
 
-
+# Better Approach
+def find_element_better(arr,m,n,target):
+    for i in range(m):
+        low = 0
+        high = n - 1
+        while low <= high:
+            mid = (low + high)//2
+            if arr[i][mid] == target:
+                return True
+            elif arr[i][mid] < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+    return False
 
 # User Input
 import numpy as np
@@ -26,5 +39,7 @@ print(array)
 target = int(input("Enter the value of the target: "))
 
 # Function Call
-result = find_element(array,m,n,target)
+# result = find_element_brute(array,m,n,target)
+# print(result)
+result = find_element_better(array,m,n,target)
 print(result)
