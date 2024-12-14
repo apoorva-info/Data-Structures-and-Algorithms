@@ -39,6 +39,8 @@ def find_element_optimal(arr,m,n,target):
         else:
             column -= 1
     return (-1,-1)
+# Time Complexity: O(m + n))
+# Space Complexity: O(1)
 
 # User Input
 import numpy as np
