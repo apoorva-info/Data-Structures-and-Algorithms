@@ -24,6 +24,8 @@ def find_element_better(arr,m,n,target):
             else:
                 high = mid - 1
     return False
+# Time Complexity: O(m * log n)
+# Space Complexity: O(1)
 
 # User Input
 import numpy as np
