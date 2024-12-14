@@ -1,6 +1,12 @@
 # Goal: To search an element in a matrix. The last element of each row may/may not be lesser than the first element of the next row.
 
-
+# Brute Force Approach
+def find_element(arr,m,n,target):
+    for i in range(m):
+        for j in range(n):
+            if arr[i][j] == target:
+                return True
+    return False
 
 
 
@@ -19,5 +25,5 @@ print(array)
 target = int(input("Enter the value of the target: "))
 
 # Function Call
-result = 
+result = find_element(array,m,n,target)
 print(result)
