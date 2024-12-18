@@ -11,8 +11,8 @@ def find_peak_element_brute(arr,m,n):
             if arr[i][j] > max(up, down, left, right):
                 return (i, j)  
     return None 
-
-
+# Time Complexity: O(m*n)
+# Space Complexity: O(1)
 
 
 # User Input
