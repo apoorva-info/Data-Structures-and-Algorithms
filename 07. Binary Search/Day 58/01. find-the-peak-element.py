@@ -17,22 +17,13 @@ def find_peak_element_brute(arr,m,n):
 
 # Better Approach
 def find_peak_element_better(arr, m, n):
-    for i in range(m):  
-        max_in_row = 0
-        for j in range(n):  
-            if arr[i][j] > arr[i][max_in_row]:
-                max_in_row = j
-
-        up = arr[i - 1][max_in_row] if i > 0 else float('-inf')
-        down = arr[i + 1][max_in_row] if i < m - 1 else float('-inf')
-        left = arr[i][max_in_row - 1] if max_in_row > 0 else float('-inf')
-        right = arr[i][max_in_row + 1] if max_in_row < n - 1 else float('-inf')
-
-        if arr[i][max_in_row] > max(up, down, left, right):
-            return (i, max_in_row)  
-
-    return None
-
+    def find_peak_in_column(mid_col):
+        max_row = 0
+        for i in range(m):
+            if arr[i][mid_col] > arr[max_row][mid_col]:
+                max_row = i
+        return max_row, mid_col
+    
 # User Input
 import numpy as np
 m = int(input("Enter the number of rows in a matrix: "))
