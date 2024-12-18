@@ -45,6 +45,8 @@ def find_peak_element_better(arr, m, n):
         return None
 
     return search_peak(0, n - 1)
+# Time Complexity: O(m* (log n))
+# Space Complexity: O(1)
     
 # User Input
 import numpy as np
