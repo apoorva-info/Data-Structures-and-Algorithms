@@ -23,6 +23,28 @@ def find_peak_element_better(arr, m, n):
             if arr[i][mid_col] > arr[max_row][mid_col]:
                 max_row = i
         return max_row, mid_col
+    def search_peak(left_col, right_col):
+        if left_col > right_col:
+            return None
+
+        mid_col = (left_col + right_col) // 2
+        max_row, mid_col = find_peak_in_column(mid_col)
+
+        up = arr[max_row - 1][mid_col] if max_row > 0 else float('-inf')
+        down = arr[max_row + 1][mid_col] if max_row < m - 1 else float('-inf')
+        left = arr[max_row][mid_col - 1] if mid_col > 0 else float('-inf')
+        right = arr[max_row][mid_col + 1] if mid_col < n - 1 else float('-inf')
+
+        if arr[max_row][mid_col] > max(up, down, left, right):
+            return (max_row, mid_col)
+
+        if mid_col > 0 and arr[max_row][mid_col - 1] > arr[max_row][mid_col]:
+            return search_peak(left_col, mid_col - 1)
+        elif mid_col < n - 1 and arr[max_row][mid_col + 1] > arr[max_row][mid_col]:
+            return search_peak(mid_col + 1, right_col)
+        return None
+
+    return search_peak(0, n - 1)
     
 # User Input
 import numpy as np
