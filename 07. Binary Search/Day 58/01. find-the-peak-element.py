@@ -1,7 +1,18 @@
 # Goal: Find the peak element in a 2D array where the adjacent cells are not same.
 
-def find_peak_element(arr,m,n):
-    
+def find_peak_element_brute(arr,m,n):
+    for i in range(m):
+        for j in range(n):
+            up = arr[i - 1][j] if i > 0 else float('-inf')
+            down = arr[i + 1][j] if i < m - 1 else float('-inf')
+            left = arr[i][j - 1] if j > 0 else float('-inf')
+            right = arr[i][j + 1] if j < n - 1 else float('-inf')
+            
+            if arr[i][j] > max(up, down, left, right):
+                return (i, j)  
+    return None 
+
+
 
 
 # User Input
