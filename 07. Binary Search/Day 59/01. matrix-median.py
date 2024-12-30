@@ -9,7 +9,8 @@ def find_median_brute(arr,m,n):
     ls = sorted(ls)
     median = (m * n)//2
     return ls[median]
-    
+# Time Complexity: O((m*n)+(m*n)log(m*n))  
+# Space Complexity: O(m*n)
 
 
 # User Input
