@@ -16,9 +16,21 @@ def find_median_brute(arr,m,n):
 def blackbox(arr, m, mid):
     count = 0 
     for i in range(m):
-        count += upper_bound(arr[i],mid)
-    return count  
-        
+        count += upper_bound(arr[i], m, mid)
+    return count 
+ 
+def upper_bound(arr,m,x):
+    low = 0
+    high = m - 1
+    ans = m
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] > x:
+            ans = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    return ans        
 
 
 def find_median_better(arr, m, n):
