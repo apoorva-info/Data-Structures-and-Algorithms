@@ -13,6 +13,13 @@ def find_median_brute(arr,m,n):
 # Space Complexity: O(m*n)
 
 # Better Approach 
+def blackbox(arr, m, mid):
+    count = 0 
+    for i in range(m):
+        count += upper_bound(arr[i],mid)
+    return count  
+        
+
 
 def find_median_better(arr, m, n):
     low = min(arr)
