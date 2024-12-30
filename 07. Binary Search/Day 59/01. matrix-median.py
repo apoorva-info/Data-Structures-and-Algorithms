@@ -7,7 +7,7 @@ def find_median_brute(arr,m,n):
         for j in range(n):
             ls.append(arr[i][j])
     ls = sorted(ls)
-    median = (m + n)//2
+    median = (m * n)//2
     return ls[median]
     
 
