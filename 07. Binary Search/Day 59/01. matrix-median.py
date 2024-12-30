@@ -34,8 +34,11 @@ def upper_bound(arr,m,x):
 
 
 def find_median_better(arr, m, n):
-    low = min(arr)
-    high = max(arr)
+    low = float('inf')
+    high = float('-inf')
+    for i in range(m):
+        low = min(low, arr[i][0])
+        high = max(high, arr[i][n-1])
     req = (m*n)//2
 
     while low <= high:
