@@ -12,6 +12,23 @@ def find_median_brute(arr,m,n):
 # Time Complexity: O((m*n)+(m*n)log(m*n))  
 # Space Complexity: O(m*n)
 
+# Better Approach 
+
+def find_median_better(arr, m, n):
+    low = min(arr)
+    high = max(arr)
+    req = (m*n)//2
+
+    while low <= high:
+        mid = (low + high)//2
+        smaller_equals = blackbox(arr, m, mid)
+        if smaller_equals <= req:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return low
+
+
 
 # User Input
 m = int(input("Enter the number of rows: "))
@@ -27,5 +44,7 @@ for i in range(m):
 print(array)
 
 # Function Call
-result = find_median_brute(array,m,n)
+# result = find_median_brute(array,m,n)
+# print(result)
+result = find_median_better(array,m,n)
 print(result)
