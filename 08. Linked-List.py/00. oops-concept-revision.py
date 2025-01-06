@@ -30,7 +30,26 @@ class Dog:
         self.age = age
         self.breed = 'German Shepherd' # Fixed attribute value
         # breed = 'German Shepherd' # Will be considered a local variable without self keyword 
+
     
 ## creating objects
-Dog1 = Dog('Little', 10)
-print(Dog1.breed)
+dog1 = Dog('Little', 10)
+print(dog1.breed)
+
+dog2 = Dog('Suku', 9)
+print(dog2.name )
+
+## Defining a class with Instance Methods
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says woof.")
+        
+# Creating objects
+dog1 = Dog("Little", 10)
+dog1.bark()
+         
