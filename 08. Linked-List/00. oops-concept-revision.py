@@ -85,4 +85,11 @@ class BankAccount:
 customer1 = BankAccount("Alice")
 customer1.deposit(1000)
 customer1.withdraw(200)
-print(customer1.get_balance())        
+print(customer1.get_balance())  
+
+customer2 = BankAccount("Ansh", 10000000)
+print(customer2.get_balance())
+customer2.deposit(50000)
+customer2.withdraw(100)
+print(customer2.get_balance())
+
