@@ -12,8 +12,8 @@ class Car:
     def drive(self):
         print(f"The person can drive {self.enginetype} car.")
     
-car1 = Car(4,4,"Petrol")
-car1.drive()
+# car1 = Car(4,4,"Petrol")
+# car1.drive()
 
 # Child Class --> Wrong way
 # class Tesla(Car): # You will writing the parent class within the brackets.
@@ -35,6 +35,48 @@ class Tesla(Car): # You will writing the parent class within the brackets.
     def selfdriving(self):
         print(f"Tesla supports self driving: {self.is_selfdriving}")
 
-car2 = Tesla(4,5,"Electric",True)
-car2.selfdriving()
-car2.drive()
+# car2 = Tesla(4,5,"Electric",True)
+# car2.selfdriving()
+# car2.drive()
+
+
+# Multiple Inheritance
+# When a class inherits from more than one base class.
+
+# Base Class 1
+class Animal:
+    def __init__(self,name):
+        self.name=name
+    
+    def animalname(self):
+        print(f"The name of the animal is {self.name}.")
+
+    def speaking(self):
+        print(f"The {self.name} says woof.")
+
+class Pet:
+    def __init__(self,pet,owner=None):
+        self.owner=owner
+        self.pet=pet
+    
+    def is_pet(self):
+        print(f"Someone's Pet: {self.pet}")
+        print(f"The name of the owner is {self.owner}.")
+
+
+# Derived Class
+class Dog(Animal,Pet):
+    def __init__(self,name,pet,owner,speak):
+        Animal.__init__(self,name)
+        Pet.__init__(self,pet,owner)
+        self.speak=speak
+    
+    def speaking(self):
+        print(f"The {self.name} says {self.speak}.") # There are two speaking methods but this will be given more
+                                                     # priority as it is in the child class. 
+        
+dog1=Dog("Little",True,"Apoorva","Bhooobhooo")
+dog1.speaking()
+dog1.is_pet()
+dog1.animalname()
+print(dog1.owner)
