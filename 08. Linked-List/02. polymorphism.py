@@ -23,15 +23,43 @@ class Cat(Animal):
     
 # Function that demonstrates polymorphism
 def animal_speak(animal):
-    print(animal_speak())
+    print(animal.speak())
 
-dog=Dog()
-print(dog.speak())
+# dog=Dog()
+# print(dog.speak())
 
-cat=Cat()
-print(cat.speak())
+# cat=Cat()
+# print(cat.speak())
 
-lion=Animal()
-print(lion.speak())
+# lion=Animal()
+# print(lion.speak())
 
-animal_speak(dog)
+# animal_speak(dog)
+# animal_speak(lion)
+# animal_speak(cat)
+
+
+# Polymorphism with Functions and Methods
+# Base Class
+class Shape:
+    def area(self):
+        return "The area of the figure."
+
+# Derived Class 1
+class Rectangle(Shape):
+    def __init__(self,length, breadth):
+        self.length=length
+        self.breadth=breadth
+    
+    def area(self):
+        return self.length * self.breadth
+
+# Derived Class 2
+class Circle(Shape):
+    def __init__(self,radius):
+        self.radius=radius
+    
+    def area(self):
+        return 3.14 * self.radius * self.radius
+        
+        
