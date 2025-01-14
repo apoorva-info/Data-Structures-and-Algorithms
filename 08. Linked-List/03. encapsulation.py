@@ -10,6 +10,12 @@ class Person:
     def __init__(self,name,age):
         self.name = name
         self.age = age
-    
+
+def get_name(person):
+    return person.name
+
+
 person = Person("Jack",23)
-print(person.name)
+# print(person.name)
+
+get_name(person)
