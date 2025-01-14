@@ -55,3 +55,41 @@ class Company(Vehicles):
 
 company=Company("BMW",2)
 print(company._name)
+
+# Encapsulation with Getter and Setter Method
+class Birds:
+    def __init__(self,name,age):
+        self.__name=name # Private Access Modifier
+        self.__age=age # Private Access Modifier
+    
+    # Getter Method for name --> For retrieving the name
+    def get_name(self):
+        return self.__name
+    
+    # Setter Method for name --> For modifying the name
+    def set_name(self,name):
+        self.__name=name
+    
+    # Getter Method for age
+    def get_age(self):
+        return self.__age
+    
+    # Setter Method for age
+    def set_age(self,age):
+        if age>0:
+            self.__age=age
+        else:
+            print("Age cannot be negative.")
+
+bird = Birds("Owl",1)
+
+# Access and modify private variables using getter and setter
+print(bird.get_name())
+print(bird.get_age())
+
+print(bird.set_age(2))
+print(bird.get_age())
+print(bird.set_age(-1))
+print(bird.get_age())
+print(bird.set_name("Sparrow"))
+print(bird.get_name())
