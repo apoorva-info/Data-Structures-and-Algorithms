@@ -22,7 +22,8 @@ person1 = Person("Jack",23)
 
 print(get_name(person1))
 
-
+# Private variables cannot be used outside the class. However, we can access the private variables inside the class using getter and setter
+# method
 class Animal:
     def __init__(self,name,age,gender):
         self.__name=name # private variable
@@ -37,3 +38,20 @@ print(animal.gender)
 # print(get_name(animal.__name))
 # print(dir(Animal))
 # print(dir(Person))
+
+# Protected : Cannot access outside the class but can access the variable from derived class.
+class Vehicles:
+    def __init__(self,name,age):
+        self._name=name # protected variable
+        self._age=age # protected variable
+        
+
+vehicle=Vehicles("Audi",1)
+print(vehicle._name)
+
+class Company(Vehicles):
+    def __init__(self,name,age):
+        super().__init__(name,age)
+
+company=Company("BMW",2)
+print(company._name)
