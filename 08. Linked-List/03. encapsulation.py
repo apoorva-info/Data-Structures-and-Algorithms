@@ -8,14 +8,32 @@
 
 class Person:
     def __init__(self,name,age):
-        self.name = name
-        self.age = age
+        self.name = name # public variable
+        self.age = age # public variable
 
-def get_name(person):
+def get_name(person): # Accessing the variable outside the class
     return person.name
 
+# These instance variables might hold important data, so I want them to be initialized properly and only modified through a 
+# specific function, which is why we use encapsulation.
 
-person = Person("Jack",23)
+person1 = Person("Jack",23)
 # print(person.name)
 
-get_name(person)
+print(get_name(person1))
+
+
+class Animal:
+    def __init__(self,name,age,gender):
+        self.__name=name # private variable
+        self.__age=age # private variable
+        self.gender=gender
+
+animal = Animal("Carrie",1,"Female")
+print(animal.gender)
+
+# def get_name_animal(animal):
+#     return animal.__name
+# print(get_name(animal.__name))
+# print(dir(Animal))
+# print(dir(Person))
