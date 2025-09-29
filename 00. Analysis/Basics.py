@@ -21,3 +21,18 @@
 
 # Apriori Analysis:
 # It is the determination of the order of magnitude of the statement.
+
+# # Example 1:
+
+# x = 10 + 20
+# print(x)
+    
+# # TC = O(1)  # Constant Time
+
+# # Example 2:
+# def main():
+#     x = y + z --> Run once
+#     for i in range(0, n): --> Run n times
+#         x = y + z   
+# # TC = O(n) 
+
